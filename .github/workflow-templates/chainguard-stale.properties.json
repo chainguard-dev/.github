@@ -1,0 +1,5 @@
+{
+    "name": "Chainguard stale workflow",
+    "description": "Flags and closes stale pull requests and issues.",
+    "iconName": "logo"
+}

@@ -1,0 +1,5 @@
+{
+    "name": "Chainguard verify codegen workflow",
+    "description": "Verifies that code generation produces no differences.",
+    "iconName": "logo"
+}

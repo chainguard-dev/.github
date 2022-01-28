@@ -1,0 +1,5 @@
+{
+    "name": "Chainguard build workflow",
+    "description": "Verifies that all Go packages build.",
+    "iconName": "logo"
+}

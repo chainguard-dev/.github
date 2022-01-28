@@ -1,0 +1,5 @@
+{
+    "name": "Chainguard style workflow",
+    "description": "Verifies that the codebase adheres to various style criteria.",
+    "iconName": "logo"
+}
