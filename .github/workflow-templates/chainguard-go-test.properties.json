@@ -1,0 +1,5 @@
+{
+    "name": "Chainguard test workflow",
+    "description": "Verifies that all Go unit testing passes.",
+    "iconName": "logo"
+}

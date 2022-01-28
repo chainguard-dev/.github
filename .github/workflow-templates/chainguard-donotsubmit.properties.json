@@ -1,0 +1,5 @@
+{
+    "name": "Chainguard DO NOT SUBMIT workflow",
+    "description": "Scans pull requests for DO NOT SUBMIT.",
+    "iconName": "logo"
+}
