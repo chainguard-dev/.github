@@ -1,0 +1,5 @@
+# repos that the labels.json will be applied all the others will not be updated.
+---
+repos:
+  - apko
+  - melange
