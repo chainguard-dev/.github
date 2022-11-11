@@ -3,3 +3,7 @@
 repos:
   - apko
   - melange
+  - internal
+  - mono
+  - customer-issues
+  - apk-repo-generator
