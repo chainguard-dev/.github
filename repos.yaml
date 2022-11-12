@@ -7,3 +7,4 @@ repos:
   - mono
   - customer-issues
   - apk-repo-generator
+  - infra-images
