@@ -108,5 +108,15 @@
     "name": "roadmap",
     "description": "used by teams to indicate issues that we want to represent in a roadmap view for sales/product",
     "color": "385be8"
+  },
+  {
+    "name": "image-request",
+    "description": "tag for new chainguard image requests",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "wolfi-package-request",
+    "description": "used to track requests for new wolfi packages",
+    "color": "c2e0c6"
   }
 ]
