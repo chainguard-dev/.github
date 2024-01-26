@@ -13,4 +13,4 @@ permissions:
 repositories:
 - helm-charts
 - homebrew-tap
-- mattmoor-actions # rrivate repo
+- mattmoor-actions # private repo
