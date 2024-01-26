@@ -1,0 +1,14 @@
+issuer: https://token.actions.githubusercontent.com
+# This explicitly allows pull requests to federate with this trust policy
+# to allow for presubmit validation.
+subject_pattern: repo:chainguard-dev/enterprise-advisories:.*
+claim_pattern:
+  job_workflow_ref: chainguard-dev/enterprise-advisories/.github/workflows/validate.yaml@.*
+
+permissions:
+  contents: read
+
+# Allow for cloning submodules.
+repositories:
+- enterprise-packages
+- grafana
