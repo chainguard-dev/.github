@@ -1,0 +1,15 @@
+# Copyright 2024 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://token.actions.githubusercontent.com
+subject: repo:chainguard-dev/mattmoor-actions:ref:refs/heads/main
+claim_pattern:
+  # Used for testing octo-sts in actions.
+  job_workflow_ref: chainguard-dev/mattmoor-actions/.github/workflows/octo-sts.yaml@refs/heads/main
+
+permissions:
+  contents: read
+
+repositories:
+- helm-charts
+- homebrew-tap
