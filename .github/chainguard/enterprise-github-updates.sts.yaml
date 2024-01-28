@@ -5,6 +5,7 @@ claim_pattern:
 
 permissions:
   contents: write
+  issues: write
   pull_requests: write
   workflows: write
 
