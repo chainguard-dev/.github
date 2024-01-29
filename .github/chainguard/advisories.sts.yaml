@@ -8,8 +8,5 @@ claim_pattern:
 permissions:
   contents: read
 
-# Allow for cloning submodules.
 repositories:
-- enterprise-advisories
 - enterprise-packages
-- grafana
