@@ -1,0 +1,13 @@
+# Copyright 2024 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://token.actions.githubusercontent.com
+subject: repo:chainguard-dev/.github:ref:refs/heads/main
+claim_pattern:
+  job_workflow_ref: chainguard-dev/.github/.github/workflows/sync-org-labels.yml@refs/heads/main
+
+permissions:
+  issues: write
+
+# This operates across the entire organization.
+repositories: []
