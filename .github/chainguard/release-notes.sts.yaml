@@ -1,0 +1,10 @@
+issuer: https://accounts.google.com
+# devops-gh-rel-notes@staging-support-tools-2b84.iam.gserviceaccount.com
+subject: "110734753607676939335"
+
+permissions:
+  issues: write
+  pull_requests: write
+
+# This operates across the entire organization.
+repositories: []
