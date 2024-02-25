@@ -1,0 +1,12 @@
+issuer: https://accounts.google.com
+# neko77@neko77.iam.gserviceaccount.com
+subject: "113809027484440661352"
+permissions:
+  discussions: read
+  issues: read
+  pull-requests: read
+  repository-projects: read
+  statuses: read
+# This operates across the entire organization.
+repositories:
+
