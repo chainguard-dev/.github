@@ -5,9 +5,9 @@ issuer: https://accounts.google.com
 subject: "101826719708554282120"
 
 permissions:
-  contents: write
-  issues: write
-  pull_requests: write
+  contents: read
+  issues: read
+  pull_requests: read
 
 repositories:
   - enterprise-packages
