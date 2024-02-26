@@ -7,7 +7,6 @@ subject: "101826719708554282120"
 permissions:
   actions: read
   contents: read
-  checks: read
   issues: read
   pull_requests: read
 
