@@ -13,4 +13,3 @@ permissions:
 repositories:
   - enterprise-packages
   - enterprise-advisories
-  - advisories
