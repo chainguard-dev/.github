@@ -3,7 +3,6 @@ issuer: https://accounts.google.com
 subject: "113809027484440661352"
 permissions:
   discussions: read
-  email: read
   issues: read
   members: read
   pull_requests: read
