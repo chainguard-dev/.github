@@ -1,0 +1,13 @@
+issuer: https://token.actions.githubusercontent.com
+# Runs presubmit and in the merge queue.
+subject_pattern: repo:chainguard-dev/enterprise-packages:.*
+claim_pattern:
+  job_workflow_ref: wolfi-dev/actions/.github/workflows/.ci-build.yml@.*
+
+permissions:
+  contents: read
+
+repositories:
+- enterprise-advisories
+- enterprise-packages
+- grafana
