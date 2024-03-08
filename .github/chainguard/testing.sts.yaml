@@ -9,6 +9,7 @@ claim_pattern:
 
 permissions:
   contents: read
+  metadata: read
 
 repositories:
 - helm-charts
