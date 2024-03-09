@@ -5,14 +5,14 @@ issuer: https://token.actions.githubusercontent.com
 subject: repo:chainguard-dev/mattmoor-actions:ref:refs/heads/main
 claim_pattern:
   # Used for testing octo-sts in actions.
-  workflow_ref: chainguard-dev/mattmoor-actions/.github/workflows/octo-sts.yaml@refs/heads/main
+  workflow_ref: chainguard-dev/mattmoor-actions/\.github/workflows/octo-sts\.yaml@refs/heads/main
 
 permissions:
-  contents: read
+  # contents: read
   metadata: read
   administration: read # To list deploy keys
 
-repositories:
-- helm-charts
-- homebrew-tap
-- mattmoor-actions # private repo
+repositories: [] # Act over all of the repos in the org.
+# - helm-charts
+# - homebrew-tap
+# - mattmoor-actions # private repo
