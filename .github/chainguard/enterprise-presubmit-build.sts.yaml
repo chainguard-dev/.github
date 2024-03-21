@@ -11,4 +11,3 @@ permissions:
 repositories:
 - enterprise-advisories
 - enterprise-packages
-- grafana
