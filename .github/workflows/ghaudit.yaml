@@ -1,10 +1,13 @@
 on:
   workflow_dispatch:
+  schedule:
+    # Audit repos twice a day.
+    - cron:  '0 0,12 * * *'
 
 name: GitHub Audit
 
 jobs:
-  build:
+  ghaudit:
     runs-on: ubuntu-latest
 
     permissions:
