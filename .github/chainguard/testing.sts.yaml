@@ -11,7 +11,9 @@ permissions:
   administration: read # To list deploy keys
   checks: read
   contents: read
+  issues: read
   metadata: read
+  pull_requests: read
 
 repositories: [] # Act over all of the repos in the org.
 # - helm-charts
