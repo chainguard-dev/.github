@@ -15,6 +15,7 @@ permissions:
   metadata: read
   pull_requests: read
   statuses: read
+  workflows: read
 
 repositories: [] # Act over all of the repos in the org.
 # - helm-charts
