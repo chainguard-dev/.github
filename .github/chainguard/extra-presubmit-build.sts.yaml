@@ -1,0 +1,13 @@
+issuer: https://token.actions.githubusercontent.com
+# Runs presubmit and in the merge queue.
+subject_pattern: repo:chainguard-dev/extra-packages:.*
+claim_pattern:
+  workflow_ref: chainguard-dev/extra-packages/.github/workflows/ci-build.yaml@.*
+
+permissions:
+  contents: read
+  pull_requests: write # to comment in prs
+
+repositories:
+- extra-advisories
+- extra-packages
