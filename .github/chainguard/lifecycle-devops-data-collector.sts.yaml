@@ -15,3 +15,5 @@ permissions:
 repositories:
   - enterprise-packages
   - enterprise-advisories
+  - extra-packages
+  - extra-advisories
