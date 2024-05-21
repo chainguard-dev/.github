@@ -10,6 +10,7 @@ claim_pattern:
 permissions:
   metadata: read
   administration: read # To list deploy keys
+  contents: read
   # secrets: read # To enumerate secret metadata (no values)
 
 repositories: [] # Act over all of the repos in the org.
