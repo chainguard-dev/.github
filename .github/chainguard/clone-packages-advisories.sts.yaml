@@ -1,0 +1,16 @@
+# Copyright 2024 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://token.actions.githubusercontent.com
+subject_pattern: repo:chainguard-dev/enterprise-advisories:ref:refs/heads/main
+claim_pattern:
+  workflow_ref: chainguard-dev/enterprise-advisories/.github/workflows/build-and-publish-osv.yaml@refs/heads/main
+
+# to be able to clone the extra/enterprise-packages/advisories repositories
+permissions:
+  contents: read
+
+repositories:
+- enterprise-packages
+- extra-packages
+- extra-advisories
