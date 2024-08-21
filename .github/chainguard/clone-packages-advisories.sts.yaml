@@ -4,7 +4,7 @@
 issuer: https://token.actions.githubusercontent.com
 subject_pattern: repo:chainguard-dev/enterprise-advisories:ref:refs/heads/main
 claim_pattern:
-  workflow_ref: chainguard-dev/enterprise-advisories/.github/workflows/build-and-publish-osv.yaml@refs/heads/main
+  workflow_ref: chainguard-dev/enterprise-advisories/.github/workflows/build-and-publish-(osv|secdb).yaml@refs/heads/main
 
 # to be able to clone the extra/enterprise-packages/advisories repositories
 permissions:
