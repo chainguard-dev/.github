@@ -1,0 +1,12 @@
+issuer: https://token.actions.githubusercontent.com
+subject: repo:chainguard-dev/internal:ref:refs/heads/main
+claim_pattern:
+  job_workflow_ref: chainguard-dev/internal/.github/workflows/sync-labels.yaml@refs/heads/main
+
+# to be able to write issues and see the repos if is private
+permissions:
+  issues: write
+  pull_requests: write
+  contents: read
+
+repositories: [] # Act over all of the repos in the org.
