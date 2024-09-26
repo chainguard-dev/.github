@@ -24,7 +24,7 @@ jobs:
           identity: sync-labels
 
       - name: run sync-labels
-        uses: docker://ghcr.io/cpanato/github-label-syncer:0.6.0@sha256:ac173809e6b8b37a1b48ced1b45a1b2ab00cac8be94db33ca1eb290a46044134
+        uses: docker://ghcr.io/cpanato/github-label-syncer:0.7.0@sha256:48969b80bcf741c5fee1553f584b8930a0b09a45b87f578bd06bf4f6f7a4f273
         env:
           GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
           LABEL_SYNCER_CONFIG_FILE: ./label-syncer.yaml
