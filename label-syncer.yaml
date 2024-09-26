@@ -55,7 +55,7 @@ general:
   - name: "squad:foundations"
     color: "7D8C2C"
     description: ""
-  - name: "squad:infra"
+  - name: "squad:infrastructure"
     color: "418251"
     description: ""
   - name: "squad:lifecycle"
@@ -70,15 +70,19 @@ general:
   - name: "squad:tools"
     color: "48B90C"
     description: ""
+  - name: "squad:security"
+    color: "48B90C"
+    description: ""
   - name: "wontfix"
     color: "ffffff"
     description: "This will not be worked on"
 
 ignoreRepos: []
 #  - repoName: "example-repo"
-repos: []
-#  - repoName: "example-repo"
-#    labels:
-#      name: "testing-label-2"
-#      color: 7F3150
-#      description: "test label"
+
+repos:
+  - repoName: "internal-dev"
+    labels:
+      - name: "interrupt"
+        color: D93F0B
+        description: ""
