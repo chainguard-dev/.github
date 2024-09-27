@@ -11,6 +11,7 @@ claim_pattern:
 
 permissions:
   issues: read
+  contents: read
   organization_projects: read
 
 repositories: [] # Act over all of the repos in the org.
