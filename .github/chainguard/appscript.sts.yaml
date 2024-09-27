@@ -10,8 +10,8 @@ claim_pattern:
   email: .*@chainguard.dev
 
 permissions:
-  issues: read
   contents: read
+  issues: read
   organization_projects: read
 
 repositories: [] # Act over all of the repos in the org.
