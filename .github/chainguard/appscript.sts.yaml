@@ -10,6 +10,7 @@ claim_pattern:
   email: .*@chainguard.dev
 
 permissions:
+  contents: read
   issues: read
   organization_projects: read
 
