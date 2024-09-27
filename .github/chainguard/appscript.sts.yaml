@@ -1,0 +1,16 @@
+# Copyright 2024 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://accounts.google.com
+subject_pattern: .*
+# The "Apps Script" client ID for the `philde-appscripts` project.
+audience: 292217359313-7vutdqjmljgk59a5vc3nkbj3i2sph52j.apps.googleusercontent.com
+claim_pattern:
+  email_verified: "true"
+  email: .*@chainguard.dev
+
+permissions:
+  issues: read
+  organization_projects: read
+
+repositories: [] # Act over all of the repos in the org.
