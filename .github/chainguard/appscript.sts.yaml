@@ -3,8 +3,8 @@
 
 issuer: https://accounts.google.com
 subject_pattern: .*
-# The "Apps Script" client ID for the `philde-appscripts` project.
-audience: 292217359313-7vutdqjmljgk59a5vc3nkbj3i2sph52j.apps.googleusercontent.com
+# Allow client IDs from the `philde-appscripts` project.
+audience_pattern: 292217359313-[a-z0-9]+\.apps\.googleusercontent\.com
 claim_pattern:
   email_verified: "true"
   email: .*@chainguard.dev
