@@ -3,8 +3,8 @@
 
 issuer: https://accounts.google.com
 # 107106855617134891633: bot-fulfilled@staging-enforce-cd1e.iam.gserviceaccount.com
-# TODO(philde): Grant access to the prod service account, when available.
-subject_pattern: "107106855617134891633"
+# 110008571748373383893: bot-fulfilled@prod-enforce-fabc.iam.gserviceaccount.com
+subject_pattern: "(107106855617134891633|110008571748373383893)"
 
 permissions:
   issues: read
