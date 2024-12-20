@@ -1,0 +1,13 @@
+issuer: https://accounts.google.com
+# devops-gh-issue-assigner@staging-support-tools-2b84.iam.gserviceaccount.com
+subject: "108698293114563924228"
+
+permissions:
+  issues: write
+
+repositories:
+  - internal-dev
+  - customer-issues
+  - image-release-stats
+  - infosec
+  - prodsec
