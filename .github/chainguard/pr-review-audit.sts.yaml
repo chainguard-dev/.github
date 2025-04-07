@@ -2,8 +2,8 @@ issuer: https://accounts.google.com
 
 # you can find the code and explanation for this in https://github.com/chainguard-dev/chainguard-devops/blob/main/github-audit-prs/README.md
 
-# staging-support-tools-2b84: devops-github-audit-prs@staging-support-tools-2b84.iam.gserviceaccount.com
-subject_pattern: "103467134585088586606"
+# internal-tools: devops-github-audit-prs@internal-tools-1ho6.iam.gserviceaccount.com
+subject_pattern: "105761415371577791996"
 
 # to be able to write issues and see the repos if is private
 permissions:
