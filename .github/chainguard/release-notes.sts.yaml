@@ -1,6 +1,6 @@
 issuer: https://accounts.google.com
-# devops-gh-rel-notes@staging-support-tools-2b84.iam.gserviceaccount.com
-subject: "110734753607676939335"
+# devops-gh-rel-notes@internal-tools-1ho6.iam.gserviceaccount.com
+subject: "114300023027344329792"
 
 permissions:
   issues: write
