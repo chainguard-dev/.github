@@ -12,7 +12,7 @@ permissions:
   members: read
 
 repositories:
-  - chainguard-dev/extra-packages
-  - chainguard-dev/enterprise-packages
-  - chainguard-dev/enterprise-advisories
-  - chainguard-dev/extra-advisories
+  - extra-packages
+  - enterprise-packages
+  - enterprise-advisories
+  - extra-advisories
