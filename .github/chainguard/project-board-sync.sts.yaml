@@ -10,6 +10,7 @@ permissions:
   issues: write
   pull_requests: read
   members: read
+  organization_projects: write
 
 repositories:
   - extra-packages
