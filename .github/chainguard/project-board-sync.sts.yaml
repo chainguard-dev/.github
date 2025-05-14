@@ -9,8 +9,6 @@ permissions:
   contents: read
   issues: write
   pull_requests: read
-  repository_projects: read
-  organization_projects: write
   members: read
 
 repositories:
