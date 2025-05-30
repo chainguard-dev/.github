@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-Thank you for taking the time to disclose a potential security issue responsibly.
+Thank you for taking the time to disclose a potential security issue.
 
 Please report vulnerabilities via email to [security@chainguard.dev](mailto:security@chainguard.dev). 
 
@@ -20,6 +20,6 @@ We are grateful when vulnerabilities are reported to us.
 As a reporter, you can expect:
 - A prompt acknowledgment of your report (within 72 hours).
 - A transparent dialog and timely fix for valid issues.
-- Credit for responsible disclosure, if desired.
+- Credit for disclosure, if desired.
 
 Please see the full [Chainguard Vulnerability Disclosure Policy](https://www.chainguard.dev/legal/inbound-vulnerability-disclosure-policy) to learn more.
