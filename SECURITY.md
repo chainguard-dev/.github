@@ -11,7 +11,7 @@ To assist our triage, please include:
 - Steps to reproduce or proof-of-concept if available.
 - Affected versions or commit hashes.
 - Any known mitigations or fixes.
-- How you would like to be credited if attribution is desired (e.g., name, handle).
+- How you would like to be credited if attribution is desired (e.g., name, known handle).
 
 ## Disclosure Policy
 
