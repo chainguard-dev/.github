@@ -14,17 +14,17 @@ permissions:
   contents: read
 
 repositories:
-- chainguard-dev/ecossytems-avro
-- chainguard-dev/ecosystems-cassandra
-- chainguard-dev/ecosystems-elasticsearch
-- chainguard-dev/ecosystems-grpc-java
-- chainguard-dev/ecosystems-hadoop
-- chainguard-dev/ecosystems-hive
-- chainguard-dev/ecosystems-kafka
-- chainguard-dev/ecosystems-libcheck
-- chainguard-dev/ecosystems-neo4j
-- chainguard-dev/ecosystems-spark
-- chainguard-dev/iamguarded-charts
-- chainguard-dev/iamguarded-containers
-- chainguard-dev/iamguarded-tools
-- chainguard-dev/zulu-jdk21u
+  - chainguard-dev/ecossytems-avro
+  - chainguard-dev/ecosystems-cassandra
+  - chainguard-dev/ecosystems-elasticsearch
+  - chainguard-dev/ecosystems-grpc-java
+  - chainguard-dev/ecosystems-hadoop
+  - chainguard-dev/ecosystems-hive
+  - chainguard-dev/ecosystems-kafka
+  - chainguard-dev/ecosystems-libcheck
+  - chainguard-dev/ecosystems-neo4j
+  - chainguard-dev/ecosystems-spark
+  - chainguard-dev/iamguarded-charts
+  - chainguard-dev/iamguarded-containers
+  - chainguard-dev/iamguarded-tools
+  - chainguard-dev/zulu-jdk21u
