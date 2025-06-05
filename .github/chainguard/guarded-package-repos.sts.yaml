@@ -6,6 +6,8 @@
 # GitHub access tokens when building packages locally.
 
 issuer: https://accounts.google.com
+
+subject_pattern: .*
 claim_pattern:
   email_verified: "true"
   email: .*@chainguard.dev
@@ -14,7 +16,7 @@ permissions:
   contents: read
 
 repositories:
-  - chainguard-dev/ecossytems-avro
+  - chainguard-dev/ecosystems-avro
   - chainguard-dev/ecosystems-cassandra
   - chainguard-dev/ecosystems-elasticsearch
   - chainguard-dev/ecosystems-grpc-java
