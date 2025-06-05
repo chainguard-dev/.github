@@ -27,3 +27,4 @@ repositories:
 - chainguard-dev/iamguarded-charts
 - chainguard-dev/iamguarded-containers
 - chainguard-dev/iamguarded-tools
+- chainguard-dev/zulu-jdk21u
