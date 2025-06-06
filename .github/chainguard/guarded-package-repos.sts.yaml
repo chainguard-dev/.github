@@ -5,7 +5,7 @@
 # using `chainctl auth octo-sts`, in order to generate short-lived, tightly-scoped
 # GitHub access tokens when building packages locally.
 
-issuer: https://accounts.google.com
+issuer: https://issuer.enforce.dev
 
 subject_pattern: .*
 claim_pattern:
