@@ -25,4 +25,5 @@ repositories:
   - iamguarded-charts
   - iamguarded-containers
   - iamguarded-tools
+  - mono
   - zulu-jdk21u
