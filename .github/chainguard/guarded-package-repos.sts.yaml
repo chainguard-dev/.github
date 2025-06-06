@@ -1,10 +1,6 @@
 # Copyright 2025 Chainguard, Inc.
 # SPDX-License-Identifier: Apache-2.0
 
-# This policy allows Chainguard employees to access private GitHub repositories
-# using `chainctl auth octo-sts`, in order to generate short-lived, tightly-scoped
-# GitHub access tokens when building packages locally.
-
 issuer: https://issuer.enforce.dev
 
 subject_pattern: .*
