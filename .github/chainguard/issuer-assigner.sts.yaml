@@ -3,11 +3,14 @@ issuer: https://accounts.google.com
 subject: "103632985228260696990"
 
 permissions:
-  issues: write
+  issues: write # Assign issues
+  pull_requests: write # Assign pull requests
 
 repositories:
-  - internal-dev
   - customer-issues
+  - enterprise-packages
+  - extra-packages
   - image-release-stats
   - infosec
+  - internal-dev
   - prodsec
