@@ -1,0 +1,10 @@
+issuer: https://accounts.google.com
+
+# TODO: get subject_pattern
+subject_pattern: "TODO"
+
+permissions:
+  actions: read
+
+repositories:
+  - apk-db
