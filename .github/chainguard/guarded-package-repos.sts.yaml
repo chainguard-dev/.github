@@ -19,7 +19,6 @@ repositories:
   - ecosystems-hadoop
   - ecosystems-hive
   - ecosystems-kafka
-  - ecosystems-libcheck
   - ecosystems-neo4j
   - ecosystems-spark
   - iamguarded-charts
