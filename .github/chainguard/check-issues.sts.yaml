@@ -1,0 +1,10 @@
+issuer: https://accounts.google.com
+# cron-github-check@internal-tools-1ho6.iam.gserviceaccount.com
+subject: "112357743990027009163"
+
+permissions:
+  issues: read # read issues
+
+repositories:
+  - customer-issues
+  - internal-dev
