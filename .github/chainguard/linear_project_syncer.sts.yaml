@@ -7,6 +7,7 @@ subject: "107440718730380529713"
 
 permissions:
   organization_projects: read
+  repository_projects: read
   issues: read
   pull_requests: read
   metadata: read
