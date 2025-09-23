@@ -1,0 +1,13 @@
+issuer: https://accounts.google.com
+# autofix@staging-enforce-cd1e.iam.gserviceaccount.com
+subject: "118295070799166027529"
+
+permissions:
+  checks: read
+  contents: write
+  pull_requests: write
+  statuses: read
+  workflows: write # Allow triggering actions when authoring commits.
+
+repositories:
+  - terraform-infra-common
