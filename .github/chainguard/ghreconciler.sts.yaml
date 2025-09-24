@@ -4,7 +4,7 @@ issuer: https://accounts.google.com
 subject_pattern: "(117292703478108941530|113456058529792035155)"
 
 permissions:
-  checks: read
+  checks: write
   contents: write # Enable autofix mode
   pull_requests: write
   statuses: read
