@@ -1,0 +1,13 @@
+issuer: https://accounts.google.com
+# The unique ID of the service account that tcnghia-net-autofix runs as
+subject: "108428541062587971294"
+
+permissions:
+  # Required to push commits with fixes to the fork
+  contents: write
+  # Required to fix GitHub Actions workflow files
+  workflows: write
+
+# You can limit the scope of what autofix can access via this list
+repositories:
+  - terraform-cloudrun-glue
