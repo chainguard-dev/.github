@@ -11,3 +11,4 @@ permissions:
 # You can limit the scope of what autofix can access via this list
 repositories:
   - terraform-cloudrun-glue
+  - enterprise-packages
