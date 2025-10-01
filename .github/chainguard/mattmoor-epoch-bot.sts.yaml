@@ -1,0 +1,12 @@
+issuer: https://accounts.google.com
+
+# mattmoor-chainguard: epoch-bot@mattmoor-chainguard.iam.gserviceaccount.com
+subject: "117477393736618266914"
+
+permissions:
+  contents: read
+  checks: write
+  pull_requests: read
+
+repositories:
+- enterprise-packages
