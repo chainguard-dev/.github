@@ -11,3 +11,4 @@ permissions:
 
 repositories:
   - terraform-infra-common
+  - enterprise-packages
