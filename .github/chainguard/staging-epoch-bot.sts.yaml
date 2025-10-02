@@ -1,0 +1,12 @@
+issuer: https://accounts.google.com
+
+# epoch-bot@staging-enforce-cd1e.iam.gserviceaccount.com
+subject: "112135878431680929231"
+
+permissions:
+  contents: read
+  checks: write
+  pull_requests: read
+
+repositories:
+- enterprise-packages
