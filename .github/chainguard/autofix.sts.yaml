@@ -5,6 +5,6 @@ subject: "114301252256317020592"
 permissions:
   checks: write
   contents: write
-  pull_requests: write
+  pull_requests: read
   statuses: read
   workflows: write # Allow triggering actions when authoring commits.
