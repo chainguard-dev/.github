@@ -1,0 +1,15 @@
+issuer: https://accounts.google.com
+# The unique ID of the service account that autofix runs as
+subject: "114301252256317020592"
+
+permissions:
+  # Required to push commits with fixes to the fork
+  contents: write
+  # Required to fix GitHub Actions workflow files
+  workflows: write
+
+# You can limit the scope of what autofix can access via this list
+repositories:
+  - enterprise-packages
+  - mono
+  - os
