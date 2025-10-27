@@ -1,0 +1,15 @@
+issuer: https://accounts.google.com
+
+# package-version-check@prod-enforce-fabc.iam.gserviceaccount.com
+subject: "116872402444336901940"
+
+permissions:
+  contents: read
+  checks: write
+  pull_requests: read
+
+repositories:
+- enterprise-packages
+- extra-packages
+# TODO(mattmoor): Validate that the new check works with Stereo
+# - stereo
