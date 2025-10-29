@@ -1,0 +1,13 @@
+issuer: https://accounts.google.com
+# qackage@wolf-chainguard.iam.gserviceaccount.com
+subject: "109305977497273168839"
+
+permissions:
+  contents: read
+  checks: write
+  pull_requests: read
+
+repositories:
+  - enterprise-packages
+  # TODO: one day
+  # - stereo
