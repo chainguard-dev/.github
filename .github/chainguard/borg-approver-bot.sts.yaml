@@ -1,0 +1,12 @@
+issuer: https://accounts.google.com
+
+# borg-chainguard: approver-bot@borg-chainguard-dev.iam.gserviceaccount.com
+subject: "105403390697071799994"
+
+permissions:
+  contents: read
+  checks: read
+  pull_requests: write
+
+repositories:
+- enterprise-packages
