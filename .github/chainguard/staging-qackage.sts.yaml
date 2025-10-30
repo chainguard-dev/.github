@@ -1,0 +1,13 @@
+issuer: https://accounts.google.com
+# qackage@staging-enforce-cd1e.iam.gserviceaccount.com
+subject: "100942902213012637818"
+
+permissions:
+  contents: read
+  checks: write
+  pull_requests: read
+
+repositories:
+  - enterprise-packages
+  # TODO: one day
+  # - stereo
