@@ -1,0 +1,12 @@
+issuer: https://accounts.google.com
+# approver-bot@mgreau85-chainguard.iam.gserviceaccount.com
+subject: "103257698206755590986"
+
+permissions:
+  contents: read
+  checks: read
+  pull_requests: write
+
+repositories:
+  - enterprise-packages
+  - wolfi-dev
