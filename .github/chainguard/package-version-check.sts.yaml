@@ -11,5 +11,4 @@ permissions:
 repositories:
 - enterprise-packages
 - extra-packages
-# TODO(mattmoor): Validate that the new check works with Stereo
-# - stereo
+- stereo
