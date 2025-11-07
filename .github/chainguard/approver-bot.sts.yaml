@@ -10,4 +10,5 @@ permissions:
 
 repositories:
 - enterprise-packages
+- extra-packages
 - stereo
