@@ -11,4 +11,6 @@ permissions:
 repositories:
 - enterprise-packages
 - extra-packages
+- iamguarded-charts
+- mono
 - stereo
