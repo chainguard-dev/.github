@@ -14,4 +14,5 @@ permissions:
   contents: read
 
 repositories:
-- mono
+- enterprise-packages
+- extra-packages
