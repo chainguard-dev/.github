@@ -1,0 +1,17 @@
+# Copyright 2025 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# OctoSTS policy for grype-db-builder staging service
+# Allows the grype-db-builder Cloud Run Job to fetch vulnerability data from GitHub
+
+issuer: https://accounts.google.com
+
+# TODO: Replace with actual staging service account uniqueId after terraform creates it
+# Get with: gcloud iam service-accounts list --project=staging-enforce-cd1e --format="table(uniqueId,email)" | grep grypedb
+subject: "REPLACE_WITH_STAGING_SA_UNIQUE_ID"
+
+permissions:
+  contents: read
+
+repositories:
+- mono
