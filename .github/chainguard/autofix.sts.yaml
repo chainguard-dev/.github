@@ -13,3 +13,4 @@ repositories:
   - enterprise-packages
   - mono
   - os
+  - terraform-cloudrun-glue
