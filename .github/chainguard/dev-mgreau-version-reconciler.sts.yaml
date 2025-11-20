@@ -1,6 +1,6 @@
 issuer: https://accounts.google.com
-# approver-bot@mgreau85-chainguard.iam.gserviceaccount.com
-subject: "116161268343964034128"
+# version-reconciler@mgreau85-chainguard.iam.gserviceaccount.com
+subject: "115273003369436100204"
 
 permissions:
   contents: read
@@ -8,5 +8,4 @@ permissions:
   pull_requests: write
 
 repositories:
-  - stereo
 
