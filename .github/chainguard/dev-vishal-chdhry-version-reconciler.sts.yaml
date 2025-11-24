@@ -1,0 +1,11 @@
+issuer: https://accounts.google.com
+# version-reconciler@vishal-chdhry-dev.iam.gserviceaccount.com
+subject: "104342291389537112327"
+
+permissions:
+  contents: read
+  checks: read
+  pull_requests: write
+
+repositories:
+
