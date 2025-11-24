@@ -1,0 +1,16 @@
+issuer: https://accounts.google.com
+# autofix@vishal-chdhry-dev.iam.gserviceaccount.com
+subject: "106158644009163869804"
+
+permissions:
+  actions: read
+  checks: write
+  contents: write
+  pull_requests: read
+  statuses: read
+  workflows: write # Allow triggering actions when authoring commits.
+
+repositories:
+  - terraform-infra-common
+  - enterprise-packages
+  - mono
