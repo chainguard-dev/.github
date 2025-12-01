@@ -7,17 +7,9 @@
 
 issuer: https://accounts.google.com
 
-# TODO: Replace with actual staging service account uniqueId after terraform creates it
 # Get with: gcloud iam service-accounts list --project=staging-enforce-cd1e --format="table(uniqueId,email)" | grep grypedb
-# Example: grypedb-xxxx@staging-enforce-cd1e.iam.gserviceaccount.com
-subject: "REPLACE_WITH_STAGING_SA_UNIQUE_ID"
+# grypedb-wri5@staging-enforce-cd1e.iam.gserviceaccount.com
+subject: "106459491698429179709"
 
 permissions:
   contents: read
-
-# Limit scope to specific repos (security best practice)
-# Even though vunnel doesn't directly access these repos, this prevents
-# the policy from granting access to ALL chainguard-dev repos
-repositories:
-- enterprise-packages
-- extra-packages
