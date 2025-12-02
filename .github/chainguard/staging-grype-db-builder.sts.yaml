@@ -13,3 +13,7 @@ subject: "106459491698429179709"
 
 permissions:
   contents: read
+
+# NOTE: we need at least one repo so we don't get global tokens
+repositories:
+  - sdk
