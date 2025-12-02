@@ -3,6 +3,7 @@ issuer: https://accounts.google.com
 subject: "114301252256317020592"
 
 permissions:
+  pull_requests: write
   # Required to push commits with fixes to the fork
   contents: write
   # Required to fix GitHub Actions workflow files
