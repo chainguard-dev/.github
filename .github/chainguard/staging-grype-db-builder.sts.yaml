@@ -1,0 +1,19 @@
+# Copyright 2025 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# OctoSTS policy for grype-db-builder staging service
+# Provides GitHub token for vunnel to query GitHub Advisory Database API
+# Token used for rate limiting (5000 req/hr vs 60 req/hr without auth)
+
+issuer: https://accounts.google.com
+
+# Get with: gcloud iam service-accounts list --project=staging-enforce-cd1e --format="table(uniqueId,email)" | grep grypedb
+# grypedb-wri5@staging-enforce-cd1e.iam.gserviceaccount.com
+subject: "106459491698429179709"
+
+permissions:
+  contents: read
+
+# NOTE: we need at least one repo so we don't get global tokens
+repositories:
+  - sdk
