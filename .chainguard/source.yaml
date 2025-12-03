@@ -1,0 +1,19 @@
+# Copyright 2025 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+spec:
+  authorities:
+    - keyless:
+        url: https://fulcio.sigstore.dev
+        identities:
+          # Humans
+          - issuer: https://github.com/login/oauth
+          # Humans and service accounts
+          - issuer: https://accounts.google.com
+          # Github actions
+          - issuer: https://token.actions.githubusercontent.com
+      ctlog:
+        url: https://rekor.sigstore.dev
+  # Any github verified
+  github:
+    verified: true
