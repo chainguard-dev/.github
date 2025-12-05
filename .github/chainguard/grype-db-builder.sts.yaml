@@ -17,4 +17,4 @@ permissions:
 
 # NOTE: we need at least one repo so we don't get global tokens
 repositories:
-  - sdk
+  - .github
