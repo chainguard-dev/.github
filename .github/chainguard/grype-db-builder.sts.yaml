@@ -1,0 +1,19 @@
+# Copyright 2025 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# OctoSTS policy for grype-db-builder production service
+# Provides GitHub token for vunnel to query GitHub Advisory Database API
+# Token used for rate limiting (5000 req/hr vs 60 req/hr without auth)
+
+issuer: https://accounts.google.com
+
+# Get with: gcloud iam service-accounts list --project=prod-enforce-fabc --format="table(uniqueId,email)" | grep grypedb
+# grypedb-m4po@prod-enforce-fabc.iam.gserviceaccount.com
+subject: "106629616593211174525"
+
+permissions:
+  contents: read
+
+# NOTE: we need at least one repo so we don't get global tokens
+repositories:
+  - sdk
