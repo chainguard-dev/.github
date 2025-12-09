@@ -9,8 +9,8 @@ issuer: https://accounts.google.com
 
 # TODO: Replace with actual production service account uniqueId after terraform creates it
 # Get with: gcloud iam service-accounts list --project=prod-enforce-fabc --format="table(uniqueId,email)" | grep grypedb
-# Example: grypedb-xxxx@prod-enforce-fabc.iam.gserviceaccount.com
-subject: "REPLACE_WITH_PROD_SA_UNIQUE_ID"
+# grypedb-m4po@prod-enforce-fabc.iam.gserviceaccount.com
+subject: "106629616593211174525"
 
 permissions:
   contents: read
