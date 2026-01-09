@@ -1,0 +1,10 @@
+issuer: https://accounts.google.com
+# version-stream@staging-enforce-cd1e.iam.gserviceaccount.com
+subject: "106643330910332898501"
+
+permissions:
+  contents: write
+  pull_requests: write
+
+repositories:
+  - stereo
