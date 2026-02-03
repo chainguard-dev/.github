@@ -5,7 +5,6 @@ subject: "100942902213012637818"
 permissions:
   contents: read
   checks: write
-  pull_requests: read
   pull_requests: write
 
 repositories:
