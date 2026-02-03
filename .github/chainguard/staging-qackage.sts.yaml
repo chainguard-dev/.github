@@ -6,6 +6,7 @@ permissions:
   contents: read
   checks: write
   pull_requests: read
+  pull_requests: write
 
 repositories:
   - enterprise-packages
