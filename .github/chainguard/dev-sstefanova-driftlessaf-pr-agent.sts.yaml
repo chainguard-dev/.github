@@ -1,0 +1,11 @@
+issuer: https://accounts.google.com
+# sstefanova-gh-pr-agt@sstefanova-dev.iam.gserviceaccount.com
+subject: "104362791841592961610"
+
+permissions:
+  contents: read
+  pull_requests: write
+  checks: write
+
+repositories:
+  - identity-reporter
