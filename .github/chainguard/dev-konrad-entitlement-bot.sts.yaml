@@ -1,0 +1,19 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for Entitlement Bot dev environment
+# Service account: entitlements-bot-dlv@konradaf-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "110085665805235371150"
+
+permissions:
+  # Create and push branches
+  contents: write
+  # Create and update pull requests
+  pull_requests: write
+  # Trigger and manage GitHub Actions workflows
+  workflows: write
+
+repositories:
+  - mono
