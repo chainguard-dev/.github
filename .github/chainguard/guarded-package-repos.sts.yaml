@@ -12,6 +12,7 @@ permissions:
   contents: read
 
 repositories:
+  - chainguard-inspec
   - ecosystems-avro
   - ecosystems-cassandra
   - ecosystems-elasticsearch
