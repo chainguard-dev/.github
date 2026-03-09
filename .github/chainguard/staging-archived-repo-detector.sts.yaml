@@ -1,0 +1,14 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://accounts.google.com
+
+# archived-repo-detector@staging-enforce-cd1e.iam.gserviceaccount.com
+# Get the unique_id after terraform apply
+subject: "TODO_REPLACE_WITH_SA_UNIQUE_ID"
+
+permissions:
+  contents: read
+
+repositories:
+  - stereo
