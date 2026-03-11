@@ -1,0 +1,13 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://accounts.google.com
+
+# archived-repo-detector@staging-enforce-cd1e.iam.gserviceaccount.com
+subject: "111588208124371921544"
+
+permissions:
+  contents: read
+
+repositories:
+  - stereo
