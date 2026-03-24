@@ -1,0 +1,21 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for eslerm's dev agent environment.
+# Used by sandboxed Claude Code agents for read-only repo access.
+#
+# Service account: dev-agent@eslerm-dev.iam.gserviceaccount.com
+# Subject ID: 105213745228935066134
+
+issuer: https://accounts.google.com
+subject: "105213745228935066134"
+
+permissions:
+  contents: read
+  pull_requests: read
+  issues: read
+  actions: read
+
+repositories:
+  - mono
+  - infra
