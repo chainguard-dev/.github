@@ -2,10 +2,10 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Octo STS policy for jml's livegrep indexer dev environment.
-# Service account: livegrep-indexer@jml-test-chainguard-dev.iam.gserviceaccount.com
+# Service account: livegrep@jml-chainguard-dev.iam.gserviceaccount.com
 
 issuer: https://accounts.google.com
-subject: "101068058788458667673"
+subject: "113476702918862144733"
 
 permissions:
   # Clone repository contents for code search indexing
