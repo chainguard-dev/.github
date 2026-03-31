@@ -17,5 +17,6 @@ permissions:
   actions: read
 
 repositories:
-  - mono
   - infra
+  - mono
+  - stereo
