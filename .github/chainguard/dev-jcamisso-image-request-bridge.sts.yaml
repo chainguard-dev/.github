@@ -1,0 +1,18 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for image-request-bridge dev environment
+# Service account: image-request-bridge@jcamisso-chainguard-dev.iam.gserviceaccount.com
+# Get subject ID from: terraform output image_request_bridge_unique_id
+
+issuer: https://accounts.google.com
+subject: "105908681865555325589"
+
+permissions:
+  # Read and comment on issues in image-requests
+  # Create issues in stereo
+  issues: write
+
+repositories:
+  - image-requests
+  - stereo
