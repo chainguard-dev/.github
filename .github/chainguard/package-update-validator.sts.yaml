@@ -1,0 +1,24 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for agentic update bot feedback loop, levelhead staging environment
+# Service account: pkg-upd-validator@prod-enforce-fabc.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "110959996406301074056"
+
+permissions:
+  # Allow fixing up github actions workflows.
+  workflows: write
+
+  # Read github actions logs
+  actions: read
+
+  # Publish check run statuses
+  checks: write
+
+  # read content on branches
+  contents: read
+
+  # Create and update pull requests
+  pull_requests: write
