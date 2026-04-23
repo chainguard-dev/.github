@@ -1,0 +1,16 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://accounts.google.com
+
+# archived-repo-detector@prod-enforce-fabc.iam.gserviceaccount.com
+# subject is the numeric unique ID from Terraform output: archived_repo_detector_service_account
+subject: "REPLACE_WITH_SA_NUMERIC_ID"
+
+permissions:
+  contents: read  # read chainguard-dev/stereo for discovery
+  issues: write   # create issues in chainguard-dev/internal-dev
+
+repositories:
+  - stereo
+  - internal-dev
