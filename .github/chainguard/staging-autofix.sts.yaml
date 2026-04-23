@@ -9,3 +9,7 @@ permissions:
   pull_requests: write
   statuses: read
   workflows: write # Allow triggering actions when authoring commits.
+
+repositories:
+  - mono
+
