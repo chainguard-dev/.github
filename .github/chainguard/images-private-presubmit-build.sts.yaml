@@ -1,0 +1,13 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Read access to mono from images-private presubmit-build workflow.
+issuer: https://token.actions.githubusercontent.com
+subject_pattern: repo:chainguard-images/images-private:.*
+claim_pattern:
+  workflow_ref: chainguard-images/images-private/.github/workflows/presubmit-build.yaml@refs/heads/main
+permissions:
+  contents: read
+
+repositories:
+  - mono

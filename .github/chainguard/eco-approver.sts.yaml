@@ -1,7 +1,7 @@
 issuer: https://accounts.google.com
 
-# approver-bot@prod-enforce-fabc.iam.gserviceaccount.com
-subject: "114898805784176589833"
+# eco-approver-bot@prod-enforce-fabc.iam.gserviceaccount.com
+subject: "106311290198800893234"
 
 permissions:
   contents: write
@@ -9,7 +9,4 @@ permissions:
   pull_requests: write
 
 repositories:
-- enterprise-packages
-- extra-packages
-- stereo
 - ecosystems-packages

@@ -1,0 +1,30 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for Materializer dev environment
+# Service account: jcamisso-materializer@jcamisso-chainguard-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "107361210749310329179"
+
+permissions:
+  # Read github actions logs
+  actions: read
+
+  # Read check status
+  checks: read
+
+  # Create and push branches
+  contents: write
+
+  # Create and update pull requests
+  pull_requests: write
+
+  # Read issues
+  issues: read
+
+  # Trigger and manage GitHub Actions workflows
+  workflows: write
+
+repositories:
+  - stereo

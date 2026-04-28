@@ -1,0 +1,13 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Read access to mono from images-private release workflow.
+issuer: https://token.actions.githubusercontent.com
+subject: repo:chainguard-images/images-private:ref:refs/heads/main
+claim_pattern:
+  workflow_ref: chainguard-images/images-private/.github/workflows/release.yaml@refs/heads/main
+permissions:
+  contents: read
+
+repositories:
+  - mono
