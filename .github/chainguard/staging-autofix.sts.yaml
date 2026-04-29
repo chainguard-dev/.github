@@ -12,4 +12,5 @@ permissions:
 
 repositories:
   - mono
+  - stereo
 
