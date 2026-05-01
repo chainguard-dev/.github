@@ -1,0 +1,20 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for manifest-gen dev environment
+# Service account: projects/aexal15-dev/serviceAccounts/aexal15-mfg@aexal15-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+
+subject: "105399363622209499999"
+
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  pull_requests: write
+  issues: read
+  workflows: write
+
+repositories:
+  - stereo
