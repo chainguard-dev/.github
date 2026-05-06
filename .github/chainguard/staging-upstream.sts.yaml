@@ -1,0 +1,13 @@
+issuer: https://accounts.google.com
+
+subject_pattern: "103003816111812880573"
+
+permissions:
+  actions: read
+  checks: read
+  contents: read
+  pull_requests: read
+  statuses: read
+
+repositories:
+  - .github
