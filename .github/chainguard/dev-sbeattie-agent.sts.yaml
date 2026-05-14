@@ -1,0 +1,19 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for sbeattie's dev agent environment.
+# Used by sandboxed Claude Code agents for read-only repo access.
+#
+# Service account: dev-agent@sbeattie-dev.iam.gserviceaccount.com
+# Subject ID: 107257230342533501395
+
+issuer: https://accounts.google.com
+subject: "107257230342533501395"
+
+permissions:
+  contents: read
+  pull_requests: read
+  issues: read
+  actions: read
+
+repositories: []
