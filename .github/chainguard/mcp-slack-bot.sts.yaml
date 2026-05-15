@@ -1,0 +1,12 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://accounts.google.com
+# mcp-slack-bot-worker@staging-enforce-cd1e.iam.gserviceaccount.com
+subject: "116448882333472298588"
+
+permissions:
+  pull_requests: read
+
+repositories:
+- stereo
