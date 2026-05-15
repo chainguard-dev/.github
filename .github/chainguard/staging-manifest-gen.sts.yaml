@@ -21,7 +21,7 @@ permissions:
   pull_requests: write
 
   # Read issues
-  issues: read
+  issues: write
 
   # Trigger and manage GitHub Actions workflows
   workflows: write
