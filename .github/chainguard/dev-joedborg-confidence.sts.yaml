@@ -12,3 +12,4 @@ permissions:
   pull_requests: read
   issues: write
   checks: read
+  statuses: read
