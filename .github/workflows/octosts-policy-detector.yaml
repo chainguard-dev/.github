@@ -1,0 +1,69 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+name: OctoSTS Policy Detector
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily at 14:00 UTC (07:00 PT).
+    - cron: "0 14 * * *"
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  detect:
+    name: Detect missing trust policies
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read # Clone the repository
+      id-token: write # Federate to GCP via Workload Identity
+
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - name: Check out code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
+        with:
+          workload_identity_provider: projects/96355665038/locations/global/workloadIdentityPools/internal-tools/providers/github-provider
+          service_account: octosts-policy-detector@octo-sts.iam.gserviceaccount.com
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3.0.1
+
+      - name: Run policy detector
+        env:
+          LINEAR_CLIENT_ID: ${{ secrets.LINEAR_CLIENT_ID }}
+          LINEAR_CLIENT_SECRET: ${{ secrets.LINEAR_CLIENT_SECRET }}
+          LINEAR_TEAM_ID: fb3471a4-4052-4177-86f3-22322880d710 # DEV
+          LINEAR_PROJECT_ID: ad5e3c08-82d8-441c-bd51-39fb5236f5e2 # Insure against GitHub API spikes
+          # Labels: materializer:managed, repo:chainguard-dev/.github, FY27Q2
+          LINEAR_LABEL_IDS: 7924b64d-1f53-48de-af56-db261221d226,35cfc7ed-3afb-4145-a9c8-98ddb3b7cd04,1038209e-ad24-44d8-8caf-42178c6b6d91
+        run: python3 .github/scripts/octosts-policy-detector.py
+
+      - name: Slack notify on failure
+        if: ${{ failure() }}
+        uses: step-security/action-slack-notify@e04c77a65bae8b6c0373478a1cb8fd7e012637e6 # v2.3.5
+        env:
+          SLACK_ICON: http://github.com/chainguard-dev.png?size=48
+          SLACK_USERNAME: octosts-policy-detector
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_CHANNEL: "#octo-sts-alerts"
+          SLACK_COLOR: "#8E1600"
+          MSG_MINIMAL: "true"
+          SLACK_TITLE: OctoSTS Policy Detector failed
+          SLACK_MESSAGE: |
+            For detailed logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
