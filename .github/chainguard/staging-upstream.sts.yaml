@@ -1,6 +1,6 @@
 issuer: https://accounts.google.com
 
-subject_pattern: "103003816111812880573"
+subject_pattern: "(103003816111812880573|114585798040659082818)"
 
 permissions:
   actions: read
