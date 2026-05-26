@@ -2,11 +2,10 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Octo STS policy for confidence bot staging environment.
-# Service account unique ID will be populated after first terraform apply
-# from: module.confidence.service_account_unique_id
+# Service account: confidence@staging-enforce-cd1e.iam.gserviceaccount.com
 
 issuer: https://accounts.google.com
-subject: "PLACEHOLDER_POPULATE_AFTER_TERRAFORM_APPLY"
+subject: "115043002511973758160"
 
 permissions:
   contents: read
