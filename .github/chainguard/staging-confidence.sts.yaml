@@ -1,0 +1,15 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for confidence bot staging environment.
+# Service account: confidence@staging-enforce-cd1e.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "115043002511973758160"
+
+permissions:
+  contents: read
+  pull_requests: read
+  statuses: read
+  issues: write
+  checks: read
