@@ -9,7 +9,6 @@ subject: "115043002511973758160"
 
 permissions:
   contents: read
-  pull_requests: read
+  pull_requests: write
   statuses: read
-  issues: write
   checks: read
