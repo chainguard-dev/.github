@@ -12,3 +12,4 @@ permissions:
   pull_requests: write
   statuses: read
   checks: read
+  administration: read # Read the base branch's required status checks for the CI gate
