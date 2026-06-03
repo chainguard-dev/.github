@@ -5,9 +5,7 @@
 # Service account: confidence@prod-enforce-fabc.iam.gserviceaccount.com
 
 issuer: https://accounts.google.com
-# Placeholder: replaced with the service account's numeric unique id once it is
-# provisioned. Matches no real subject until then.
-subject: "REPLACE_WITH_SUBJECT"
+subject: "109042772399487188202"
 
 permissions:
   contents: read
