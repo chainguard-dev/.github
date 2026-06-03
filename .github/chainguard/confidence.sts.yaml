@@ -1,0 +1,17 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for confidence bot production environment.
+# Service account: confidence@prod-enforce-fabc.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+# Placeholder: replaced with the service account's numeric unique id once it is
+# provisioned. Matches no real subject until then.
+subject: "REPLACE_WITH_SUBJECT"
+
+permissions:
+  contents: read
+  pull_requests: write
+  statuses: read
+  checks: read
+  administration: read # Read the base branch's required status checks for the CI gate
