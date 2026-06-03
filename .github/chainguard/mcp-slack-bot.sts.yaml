@@ -6,7 +6,12 @@ issuer: https://accounts.google.com
 subject: "116448882333472298588"
 
 permissions:
+  issues: read
   pull_requests: read
 
 repositories:
+# stereo: read pull requests (skillup PRs, build status).
 - stereo
+# image-release-stats: read chonk issues to check whether an image is a known
+# broken build before reporting on its health.
+- image-release-stats
