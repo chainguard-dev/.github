@@ -13,3 +13,4 @@ repositories:
 - extra-packages
 - stereo
 - ecosystems-packages
+- guarded-actions
