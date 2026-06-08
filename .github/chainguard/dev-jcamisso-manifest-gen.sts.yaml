@@ -20,8 +20,8 @@ permissions:
   # Create and update pull requests
   pull_requests: write
 
-  # Read issues
-  issues: read
+  # Read issues to fetch issue body; post failure comments and apply the halt label on issues
+  issues: write
 
   # Trigger and manage GitHub Actions workflows
   workflows: write
