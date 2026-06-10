@@ -20,8 +20,8 @@ permissions:
   # Create and update pull requests
   pull_requests: write
 
-  # Read issues
-  issues: read
+  # Comment on and label issues
+  issues: write
 
   # Trigger and manage GitHub Actions workflows
   workflows: write
