@@ -5,7 +5,7 @@ issuer: https://accounts.google.com
 
 # archived-repo-detector@prod-enforce-fabc.iam.gserviceaccount.com
 # subject is the numeric unique ID from Terraform output: archived_repo_detector_service_account
-subject: "REPLACE_WITH_SA_NUMERIC_ID"
+subject: "112370107846202148388"
 
 permissions:
   contents: read  # read chainguard-dev/stereo for discovery
