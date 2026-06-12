@@ -1,0 +1,32 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the lens-orchestrator bot (dev environments).
+# The bot scaffolds projects and opens/updates pull requests, minting GitHub
+# tokens via octo-sts (OCTO_IDENTITY=lens-orchestrator).
+#
+# Authorized GCP service accounts (one per dev env), by numeric uniqueId:
+#   - lens-orchestrator@jrawlings2-chainguard-dev  (uniqueId 100436891842070281075)
+#   - lens-orchestrator@tbloom129-dev              (created on tbloom.dev apply)
+#
+# TODO(post-apply): replace the PLACEHOLDER below with both uniqueIds, e.g.
+#   subject_pattern: "^(100436891842070281075|<tbloom129-dev-sa-id>)$"
+issuer: https://accounts.google.com
+subject_pattern: "^PLACEHOLDER_REPLACE_WITH_DEV_SA_UNIQUE_IDS$"
+
+permissions:
+  # Read GitHub Actions logs for build/log feedback.
+  actions: read
+
+  # Read CI check status for reconcile gates.
+  checks: read
+
+  # Create and push scaffolding branches.
+  contents: write
+
+  # Create and update pull requests.
+  pull_requests: write
+
+repositories:
+  # TODO: scope to the repo(s) the dev orchestrator scaffolds into.
+  - PLACEHOLDER_TARGET_REPO

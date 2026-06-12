@@ -1,0 +1,25 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the lens-lookout bot (dev environments).
+# Read-only watcher: it reads PR merge/mergeable state to detect drift and
+# heals via re-enqueue / Linear comments — it does NOT write to GitHub.
+# Mints GitHub tokens via octo-sts (OCTO_IDENTITY=lens-lookout).
+#
+# Authorized GCP service accounts (one per dev env), by numeric uniqueId:
+#   - lens-lookout@jrawlings2-chainguard-dev  (created on 410-lens-lookout apply)
+#   - lens-lookout@tbloom129-dev              (if/when deployed)
+#
+# TODO(post-apply): replace the PLACEHOLDER below with the uniqueIds, e.g.
+#   subject_pattern: "^(<jrawlings2-dev-sa-id>|<tbloom129-dev-sa-id>)$"
+issuer: https://accounts.google.com
+subject_pattern: "^PLACEHOLDER_REPLACE_WITH_DEV_SA_UNIQUE_IDS$"
+
+permissions:
+  # Read PR merge/mergeable state to detect drift.
+  contents: read
+  pull_requests: read
+
+repositories:
+  # TODO: scope to the repo(s) whose PRs the lookout inspects.
+  - PLACEHOLDER_TARGET_REPO
