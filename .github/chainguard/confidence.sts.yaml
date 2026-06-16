@@ -11,5 +11,5 @@ permissions:
   contents: read
   pull_requests: write
   statuses: read
-  checks: read
+  checks: write # Publish the grade as a check run on the PR head commit
   administration: read # Read the base branch's required status checks for the CI gate
