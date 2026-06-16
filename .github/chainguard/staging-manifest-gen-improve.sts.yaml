@@ -1,0 +1,26 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the manifest-gen-improve nightly pipeline, staging.
+# Service account: manifest-gen-improve@staging-enforce-cd1e.iam.gserviceaccount.com
+#
+# Read-only: the nightly stats->diagnose pipeline only reads manifest-gen PRs,
+# CI check-run statuses, and CI job logs to build failure reports. It never
+# writes. Mirrors the staging-manifest-gen writer sibling, scoped to stereo via
+# the repositories field.
+
+issuer: https://accounts.google.com
+subject: "102958354716030199789"
+
+permissions:
+  # Read CI job logs for failure analysis
+  actions: read
+
+  # Read CI check-run statuses
+  checks: read
+
+  # List and read manifest-gen PRs
+  pull_requests: read
+
+repositories:
+  - stereo
