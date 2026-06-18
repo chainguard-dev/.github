@@ -1,0 +1,33 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the manifest-gen-improve nightly pipeline, production.
+# Service account: manifest-gen-improve@prod-enforce-fabc.iam.gserviceaccount.com
+#
+# Read-only: the nightly stats->diagnose pipeline only reads manifest-gen PRs,
+# CI check-run statuses, and CI job logs to build failure reports. It never
+# writes. Mirrors staging-manifest-gen-improve, scoped to stereo via the
+# repositories field.
+#
+# TODO(FUL-373): replace subject: with the prod SA's Google numeric unique_id
+# once env/enforce.dev/iac/400-manifest-gen-improve has been applied (mono
+# #43326). Capture it from the stage's terraform output:
+#   terraform -chdir=env/enforce.dev/iac/400-manifest-gen-improve output service_account_unique_id
+# The placeholder below cannot match any real subject claim, so the policy is
+# inert until updated.
+
+issuer: https://accounts.google.com
+subject: "REPLACE_WITH_PROD_SA_UNIQUE_ID"
+
+permissions:
+  # Read CI job logs for failure analysis
+  actions: read
+
+  # Read CI check-run statuses
+  checks: read
+
+  # List and read manifest-gen PRs
+  pull_requests: read
+
+repositories:
+  - stereo
