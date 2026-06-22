@@ -1,0 +1,14 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the reviewbot jrawlings2 dev environment.
+# Service account: reviewbot@jrawlings2-chainguard-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "110094049238630534449"
+
+permissions:
+  contents: read
+  pull_requests: write
+  checks: write
+  actions: read
