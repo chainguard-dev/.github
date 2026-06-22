@@ -6,7 +6,7 @@
 # Subject is the service account uniqueId; placeholder until provisioned.
 
 issuer: https://accounts.google.com
-subject: "REPLACE_WITH_STAGING_REVIEWBOT_SA_UNIQUE_ID"
+subject: "108756776931572681189"
 
 permissions:
   contents: read
