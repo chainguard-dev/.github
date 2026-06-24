@@ -6,7 +6,7 @@ issuer: https://accounts.google.com
 subject: "116448882333472298588"
 
 permissions:
-  issues: read
+  issues: write          # was: read
   pull_requests: read
 
 repositories:
@@ -15,3 +15,4 @@ repositories:
 # image-release-stats: read chonk issues to check whether an image is a known
 # broken build before reporting on its health.
 - image-release-stats
+- mono
