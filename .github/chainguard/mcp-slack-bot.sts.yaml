@@ -6,7 +6,7 @@ issuer: https://accounts.google.com
 subject: "116448882333472298588"
 
 permissions:
-  issues: write          # was: read
+  issues: write          # write permission to create materializer issues from the slack bot
   pull_requests: read
 
 repositories:
