@@ -1,0 +1,18 @@
+# Copyright 2025 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Write token for chainguard-dev/infosec access-audits.yaml to open the GitHub
+# access-audit PR into chainguard-dev/internal. Structurally identical to the
+# deployed sync-gh-users.sts.yaml (which writes PRs into infra/chainguard-devops).
+# A human still reviews/merges every PR; branch protection on internal still applies.
+issuer: https://token.actions.githubusercontent.com
+subject: repo:chainguard-dev/infosec:ref:refs/heads/main
+claim_pattern:
+  job_workflow_ref: chainguard-dev/infosec/.github/workflows/access-audits.yaml@refs/heads/main
+
+permissions:
+  contents: write # create branch + commit the generated YAML in internal
+  pull_requests: write # open the audit PR
+
+repositories:
+  - internal
