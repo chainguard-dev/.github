@@ -3,12 +3,11 @@
 
 # Octo STS policy for the reviewbot production environment.
 # Service account: reviewbot@prod-enforce-fabc.iam.gserviceaccount.com
-# Subject is the service account uniqueId. PLACEHOLDER until the prod env is
-# applied (env/enforce.dev/iac/400-reviewbot in chainguard-dev/mono); replace
-# with the reviewbot_service_account_unique_id output after the first apply.
+# Subject is that service account's uniqueId, seeded from the prod
+# environment apply.
 
 issuer: https://accounts.google.com
-subject: "PLACEHOLDER"
+subject: "104454286738483875255"
 
 permissions:
   contents: read
