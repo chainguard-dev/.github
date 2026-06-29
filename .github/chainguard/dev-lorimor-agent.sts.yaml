@@ -1,0 +1,19 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for lorimor's dev agent environment.
+# Used by sandboxed Claude Code agents for read-only repo access.
+#
+# Service account: dev-agent@lorimor-testing.iam.gserviceaccount.com
+# Subject ID: 112046521937659424600
+
+issuer: https://accounts.google.com
+subject: "112046521937659424600"
+
+permissions:
+  contents: read
+  pull_requests: read
+  issues: read
+  actions: read
+
+repositories: []
