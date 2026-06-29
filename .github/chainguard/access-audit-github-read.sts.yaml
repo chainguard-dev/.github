@@ -1,0 +1,18 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Read-only token for chainguard-dev/infosec access-audits.yaml: checks out the
+# github-iac member files from infra and lists live chainguard-dev members for the
+# in-PR drift cross-check. Models audit-gh-automation.sts.yaml (members/metadata read).
+issuer: https://token.actions.githubusercontent.com
+subject: repo:chainguard-dev/infosec:ref:refs/heads/main
+claim_pattern:
+  job_workflow_ref: chainguard-dev/infosec/.github/workflows/access-audits.yaml@refs/heads/main
+
+permissions:
+  contents: read # checkout infra github-iac/orgs/members
+  members: read # GET /orgs/chainguard-dev/members for the drift cross-check
+  metadata: read # read org metadata
+
+repositories:
+  - infra
