@@ -20,8 +20,9 @@ permissions:
   # Create and update pull requests
   pull_requests: write
 
-  # Read issues (the bot's trigger)
-  issues: read
+  # Read issues (the bot's trigger) + write to swap the pending-apk holding
+  # label to managed (FUL-426 apk-listener)
+  issues: write
 
   # Trigger and manage GitHub Actions workflows
   workflows: write
