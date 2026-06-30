@@ -1,39 +1,24 @@
 # Copyright 2026 Chainguard, Inc.
 # SPDX-License-Identifier: Apache-2.0
 
-# Octo STS policy for the Lens hub (customer-issues L3 escalation dashboard).
-# The hub mints a short-lived GitHub token to read customer-issue tickets +
-# comments and to post comments back from Lens, replacing the standing
-# GITHUB_TOKEN that was never set in prod/preview. Same hub Cloud Run service
-# accounts as lens-review-queue (the dashboards share the linear-dashboard svc).
+# Octo STS policy for the Lens dashboard service accounts. Mints a short-lived
+# GitHub token to read issues and an org-level project board and to post issue
+# comments — no standing token.
 #
-# The issues:write grant is restricted to the single customer-issues repo
-# (write is the more dangerous grant). The dashboard's source list also needs
-# org-wide read of Projects v2 (organization_projects: read, below) — read-only
-# and not scopable to one project by GitHub.
+# issues:write is scoped to the single repo below (write is the more dangerous
+# grant). organization_projects:read is org-wide and read-only — GitHub does not
+# allow scoping it to a single project board.
 #
-# Federates both hub Cloud Run service accounts by their Google numeric uniqueId:
-#   preview: linear-dashboard-sa@jrawlings2-chainguard-dev.iam.gserviceaccount.com
-#            uniqueId 106033804611612894562
-#   prod:    linear-dashboard-sa@tbloom129-dev.iam.gserviceaccount.com
-#            uniqueId 107735894821561716452
+# subject_pattern federates the preview + prod service accounts by their Google
+# numeric uniqueId.
 
 issuer: https://accounts.google.com
 subject_pattern: "^(106033804611612894562|107735894821561716452)$"
 
 permissions:
-  # Read customer-issue tickets + comments, and post comments back from Lens.
-  # write implies read, so this one grant covers both the fetch and comment paths.
+  # Read + comment on issues in the repo below (write implies read).
   issues: write
-  # The L3 escalation dashboard now sources its list from the org-level
-  # "Engineering Escalations" Project v2 (#99) via GraphQL
-  # (organization.projectV2(...).items). Reading an org Project v2 requires the
-  # org-level Projects permission — without it the fetch fails and the dashboard
-  # 500s. This is org-wide read of Projects v2 (GitHub doesn't let it be scoped
-  # to a single project number); it's read-only, narrower than write. Issue
-  # *content* for project items still follows issues read above, so items from
-  # repos outside `repositories` surface as project entries with null content
-  # and are skipped client-side until those repos are added here.
+  # Read-only access to org-level project boards (the dashboard's source list).
   organization_projects: read
 
 repositories:
