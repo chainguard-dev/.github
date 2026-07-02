@@ -20,8 +20,9 @@ permissions:
   # Create and update pull requests
   pull_requests: write
 
-  # Read issues
-  issues: read
+  # Read issue bodies and post reconciliation comments (start comment,
+  # give-up, failure). Matches staging and prod manifest-gen.
+  issues: write
 
   # Trigger and manage GitHub Actions workflows
   workflows: write
