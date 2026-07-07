@@ -19,5 +19,10 @@ subject_pattern: "^(106033804611612894562|107735894821561716452)$"
 permissions:
   # Read open PRs and their requested reviewers. Read-only.
   pull_requests: read
+  # Read org teams so GraphQL `requestedReviewer { ... on Team }` resolves.
+  # Without this the app token sees Team review requests as null, which
+  # silently drops every team-requested review from the dashboard (the Teams
+  # tab reads empty and team-routed rows lose their attribution). Read-only.
+  members: read
 
 repositories: []  # Act over all of the repos in the org.
