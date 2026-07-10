@@ -13,7 +13,7 @@
 # numeric uniqueId.
 
 issuer: https://accounts.google.com
-subject_pattern: "^(106033804611612894562|107735894821561716452)$"
+subject_pattern: "^(106033804611612894562|107735894821561716452|116438120363188640248)$"
 
 permissions:
   # Read + comment on issues in the repo below (write implies read).

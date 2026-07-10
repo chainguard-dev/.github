@@ -10,11 +10,14 @@
 # Federates both hub Cloud Run service accounts by their Google numeric uniqueId:
 #   preview: linear-dashboard-sa@jrawlings2-chainguard-dev.iam.gserviceaccount.com
 #            uniqueId 106033804611612894562
-#   prod:    linear-dashboard-sa@tbloom129-dev.iam.gserviceaccount.com
+#   prod (legacy, until cutover):
+#            linear-dashboard-sa@tbloom129-dev.iam.gserviceaccount.com
 #            uniqueId 107735894821561716452
+#   prod:    lens-sa@eng-observability.iam.gserviceaccount.com
+#            uniqueId 116438120363188640248
 
 issuer: https://accounts.google.com
-subject_pattern: "^(106033804611612894562|107735894821561716452)$"
+subject_pattern: "^(106033804611612894562|107735894821561716452|116438120363188640248)$"
 
 permissions:
   # Read open PRs and their requested reviewers. Read-only.
