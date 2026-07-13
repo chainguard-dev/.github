@@ -6,6 +6,11 @@ subject: "114898805784176589833"
 permissions:
   contents: write
   checks: read
+  # mono PR head commits carry legacy commit statuses,
+  # and reading a statusCheckRollup that contains StatusContext nodes requires
+  # the commit-statuses permission; without it the whole rollup query fails with
+  # "Resource not accessible by integration".
+  statuses: read
   pull_requests: write
 
 repositories:
@@ -14,3 +19,4 @@ repositories:
 - stereo
 - ecosystems-packages
 - guarded-actions
+- mono
