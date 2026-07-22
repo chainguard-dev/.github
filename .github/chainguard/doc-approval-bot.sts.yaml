@@ -1,0 +1,17 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the doc-approval production environment.
+# Service account: doc-approval@prod-enforce-fabc.iam.gserviceaccount.com
+# Subject is the service account uniqueId; placeholder until provisioned.
+#
+# TODO(post-apply): replace the PLACEHOLDER below with the uniqueId.
+
+issuer: https://accounts.google.com
+subject: "PLACEHOLDER_REPLACE_WITH_PROD_SA_UNIQUE_ID"
+
+permissions:
+  contents: read
+  pull_requests: read
+  checks: write
+  members: read
