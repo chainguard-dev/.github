@@ -1,0 +1,21 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for Kaiming's libraries-gen dev environment.
+# Service account: klrmngr-libraries-gen@klrmngr-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+# Replace after env/dev/klrmngr/400-libraries-gen creates the service account:
+# terraform output service_account_unique_id
+subject: "TODO"
+
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  pull_requests: write
+  issues: write
+  workflows: write
+
+repositories:
+  - ecosystems-packages
