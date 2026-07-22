@@ -8,8 +8,9 @@
 issuer: https://accounts.google.com
 
 # Get with: gcloud iam service-accounts list --project=prod-enforce-fabc --format="table(uniqueId,email)" | grep grypedb
-# grypedb-m4po@prod-enforce-fabc.iam.gserviceaccount.com
-subject: "106629616593211174525"
+# grypedb-m4po@prod-enforce-fabc.iam.gserviceaccount.com (primary) = 106629616593211174525
+# grypedb-ljg9@prod-enforce-fabc.iam.gserviceaccount.com (osv)     = 104116614846982776167
+subject_pattern: "^(106629616593211174525|104116614846982776167)$"
 
 permissions:
   contents: read

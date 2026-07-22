@@ -8,8 +8,9 @@
 issuer: https://accounts.google.com
 
 # Get with: gcloud iam service-accounts list --project=staging-enforce-cd1e --format="table(uniqueId,email)" | grep grypedb
-# grypedb-wri5@staging-enforce-cd1e.iam.gserviceaccount.com
-subject: "106459491698429179709"
+# grypedb-wri5@staging-enforce-cd1e.iam.gserviceaccount.com (primary) = 106459491698429179709
+# grypedb-8yiq@staging-enforce-cd1e.iam.gserviceaccount.com (osv)     = 104538207444205632939
+subject_pattern: "^(106459491698429179709|104538207444205632939)$"
 
 permissions:
   contents: read
