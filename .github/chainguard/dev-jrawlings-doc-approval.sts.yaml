@@ -1,0 +1,14 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the doc-approval jrawlings2 dev environment.
+# Service account: doc-approval@jrawlings2-chainguard-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "103721174803380423559"
+
+permissions:
+  contents: read
+  pull_requests: read
+  checks: write
+  members: read
