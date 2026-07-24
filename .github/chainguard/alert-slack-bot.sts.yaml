@@ -1,19 +1,16 @@
 # Copyright 2026 Chainguard, Inc.
 # SPDX-License-Identifier: Apache-2.0
 
-# Read-only token for the alert-slack-bot review-queue policy
-# (chainguard-dev/mono#47496): team membership lookup plus PR search.
-# Org-level because members:read is an org permission; repo access is
-# limited to mono. Models approver-bot (Google-issuer SA federation)
-# and access-audit-github-read (members read).
+# Read-only access for the alert-slack-bot review-queue policy: team
+# membership lookup plus PR search, limited to mono.
 issuer: https://accounts.google.com
 
 # alert-slack-bot@staging-enforce-cd1e | alert-slack-bot@prod-enforce-fabc
 subject_pattern: (114816490335454510913|115816735061299852605)
 
 permissions:
-  members: read       # resolve the policy's author_team membership
-  pull_requests: read # PR search and review data
+  members: read
+  pull_requests: read
   metadata: read
 
 repositories:
