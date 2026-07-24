@@ -14,8 +14,6 @@ permissions:
   checks: read
   contents: write
   pull_requests: write
-  issues: write
-  workflows: write
 
 repositories:
   - ecosystems-packages
