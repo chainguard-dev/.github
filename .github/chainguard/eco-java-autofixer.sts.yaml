@@ -1,0 +1,21 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the shared dev-eco Java autofixer.
+# Service account: eco-java-autofixer@dev-eco-jb8z.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+# Replace after env/dev-eco/iac/400-eco-java-autofixer creates the service
+# account: terraform output reconciler_service_account_unique_id
+subject: "TODO"
+
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  pull_requests: write
+  issues: write
+  workflows: write
+
+repositories:
+  - ecosystems-packages

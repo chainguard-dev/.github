@@ -1,0 +1,21 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for Kaiming's Eco Java Autofixer dev environment.
+# Service account: klrmngr-eco-java-autofixer@klrmngr-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+# Replace after env/dev/klrmngr/400-eco-java-autofixer creates the service
+# account: terraform output reconciler_service_account_unique_id
+subject: "TODO"
+
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  pull_requests: write
+  issues: write
+  workflows: write
+
+repositories:
+  - ecosystems-packages
