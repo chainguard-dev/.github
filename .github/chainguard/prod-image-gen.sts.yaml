@@ -1,0 +1,31 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for image-gen prod environment
+# Service account: image-gen@prod-enforce-fabc.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "105626661333755983812"
+
+permissions:
+  # Read github actions logs
+  actions: read
+
+  # Read check status
+  checks: read
+
+  # Create and push branches with the generated image package
+  contents: write
+
+  # Create and update pull requests
+  pull_requests: write
+
+  # Read issues (the bot's trigger) + write to swap the pending-apk holding
+  # label to managed (FUL-426 apk-listener)
+  issues: write
+
+  # Trigger and manage GitHub Actions workflows
+  workflows: write
+
+repositories:
+  - stereo
