@@ -2,12 +2,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Octo STS policy for Kaiming's Eco Java Autofixer dev environment.
-# Service account: klrmngr-eco-java-autofixer@klrmngr-dev.iam.gserviceaccount.com
+# Service accounts:
+# - eco-java-autofixer@klrmngr-dev.iam.gserviceaccount.com
+# - eco-java-autofixer-ghe@klrmngr-dev.iam.gserviceaccount.com
 
 issuer: https://accounts.google.com
-# Replace after env/dev/klrmngr/400-eco-java-autofixer creates the service
-# account: terraform output reconciler_service_account_unique_id
-subject: "TODO"
+subject_pattern: "(108138974751616132558|104848538702387008081)"
 
 permissions:
   actions: read

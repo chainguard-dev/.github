@@ -2,12 +2,10 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Read-only Java repair skills for Kaiming's dev autofixer.
-# Service account: klrmngr-eco-java-autofixer@klrmngr-dev.iam.gserviceaccount.com
+# Service account: eco-java-autofixer@klrmngr-dev.iam.gserviceaccount.com
 
 issuer: https://accounts.google.com
-# Use the same subject as dev-klrmngr-eco-java-autofixer.sts.yaml after the
-# service account is created.
-subject: "TODO"
+subject: "108138974751616132558"
 
 permissions:
   contents: read
