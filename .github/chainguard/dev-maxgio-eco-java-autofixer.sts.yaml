@@ -1,0 +1,19 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the maxgio-dev Eco Java Autofixer dev environment.
+# Service accounts:
+# - eco-java-autofixer@maxgio-dev.iam.gserviceaccount.com
+# - eco-java-autofixer-ghe@maxgio-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject_pattern: "(102194038154041610217|100655627982885661774)"
+
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  pull_requests: write
+
+repositories:
+  - ecosystems-packages
