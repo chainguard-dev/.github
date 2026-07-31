@@ -1,0 +1,14 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Read-only Java repair skills for the maxgio-dev dev autofixer.
+# Service account: eco-java-autofixer@maxgio-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "102194038154041610217"
+
+permissions:
+  contents: read
+
+repositories:
+  - ecosystems-java-rebuilder
