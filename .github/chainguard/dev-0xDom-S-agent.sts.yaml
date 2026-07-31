@@ -1,0 +1,19 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for 0xDom-S's dev agent environment.
+# Used by sandboxed Claude Code agents for read-only repo access.
+#
+# Service account: dev-agent@domshort-chainguard.iam.gserviceaccount.com
+# Subject ID: 101522251074011581414
+
+issuer: https://accounts.google.com
+subject: "101522251074011581414"
+
+permissions:
+  contents: read
+  pull_requests: read
+  issues: read
+  actions: read
+
+repositories: []
