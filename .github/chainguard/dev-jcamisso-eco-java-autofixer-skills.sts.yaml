@@ -1,0 +1,14 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Read-only Java repair skills for Jamon's dev autofixer.
+# Service account: eco-java-autofixer@jcamisso-chainguard-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "104444996969417179302"
+
+permissions:
+  contents: read
+
+repositories:
+  - ecosystems-java-rebuilder
