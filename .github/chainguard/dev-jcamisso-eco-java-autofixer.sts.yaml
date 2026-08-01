@@ -1,0 +1,19 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for Jamon's Eco Java Autofixer dev environment.
+# Service accounts:
+# - eco-java-autofixer@jcamisso-chainguard-dev.iam.gserviceaccount.com
+# - eco-java-autofixer-ghe@jcamisso-chainguard-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject_pattern: "(104444996969417179302|118328934374176559774)"
+
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  pull_requests: write
+
+repositories:
+  - ecosystems-packages
