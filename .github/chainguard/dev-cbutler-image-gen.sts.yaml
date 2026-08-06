@@ -1,0 +1,31 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for image-gen dev environment
+# Service account: cbutler-img@cbutler-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "108317626125660864341"
+
+permissions:
+  # Read github actions logs
+  actions: read
+
+  # Read check status
+  checks: read
+
+  # Create and push branches with the generated image package
+  contents: write
+
+  # Create and update pull requests
+  pull_requests: write
+
+  # Read issue bodies (the bot's trigger), and comment on / label issues to
+  # surface terminal failures and apply the skip:<identity> halt label.
+  issues: write
+
+  # Trigger and manage GitHub Actions workflows
+  workflows: write
+
+repositories:
+  - stereo
