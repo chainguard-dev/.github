@@ -1,0 +1,22 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the approver tcnghia.net dev environment.
+# Service account: approver@nghia-chainguard-ng.iam.gserviceaccount.com
+#
+# Approve-only: the bot submits an approving review and labels PRs, but never
+# merges, so it needs no contents: write (staging-approver-bot has it only for
+# its direct-merge path). Deployed by env/dev/tcnghia.net/iac/999-approver in
+# chainguard-dev/mono; scoped to mono, the only repo it approves.
+
+issuer: https://accounts.google.com
+subject: "108253857776007391606"
+
+permissions:
+  contents: read
+  checks: read
+  statuses: read
+  pull_requests: write
+
+repositories:
+- mono
