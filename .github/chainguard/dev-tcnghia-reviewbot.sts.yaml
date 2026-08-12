@@ -1,0 +1,14 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the reviewbot tcnghia.net dev environment.
+# Service account: reviewbot@nghia-chainguard-ng.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "115641465214975960824"
+
+permissions:
+  contents: read
+  pull_requests: write
+  checks: write
+  actions: read
