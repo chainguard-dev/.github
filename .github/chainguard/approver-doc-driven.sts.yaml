@@ -3,16 +3,17 @@
 
 # Octo STS policy for the approver-doc-driven identity (production).
 # Service account: approver-doc-driven@prod-enforce-fabc.iam.gserviceaccount.com
-# Subject is the service account's uniqueId, seeded after the environment's
-# first apply; the placeholder below matches no token until then.
 issuer: https://accounts.google.com
-subject: "000000000000000000000"
+subject: "114533477710399694101"
 
 permissions:
   contents: read
   checks: read
   statuses: read
   pull_requests: write
+  # Needed for the ownership gate's team-CODEOWNERS check; without it the
+  # gate fails closed to individual @logins and doc authors only.
+  members: read
 
 repositories:
 - mono
