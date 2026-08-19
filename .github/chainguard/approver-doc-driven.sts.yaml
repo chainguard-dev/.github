@@ -9,7 +9,9 @@ issuer: https://accounts.google.com
 subject: "000000000000000000000"
 
 permissions:
-  contents: read
+  # write (not read): this identity writes merge commits to the protected
+  # branch, so read is insufficient.
+  contents: write
   checks: read
   statuses: read
   pull_requests: write
