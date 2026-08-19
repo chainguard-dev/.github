@@ -14,7 +14,12 @@ subject: "108253857776007391606"
 
 permissions:
   contents: read
-  checks: read
+  # checks: write, not read, as an experiment: the guard query's
+  # checkSuite.app.databaseId selection fails with "Resource not accessible by
+  # integration" on any page containing an Enforce - Commit Signing run, and
+  # this tests whether the checks permission level governs reading another
+  # App's identity on a check suite. Revert to read if it changes nothing.
+  checks: write
   statuses: read
   pull_requests: write
   # The ownership gate resolves a CODEOWNERS "@chainguard-dev/<team>" entry by
