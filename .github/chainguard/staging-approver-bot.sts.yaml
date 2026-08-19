@@ -12,6 +12,13 @@ permissions:
   # "Resource not accessible by integration".
   statuses: read
   pull_requests: write
+  # The ownership gate resolves a CODEOWNERS "@chainguard-dev/<team>" entry by
+  # asking whether the PR author is an active member of that team
+  # (GetTeamMembershipBySlug), which is an organization read, not a repository
+  # one. Without it the lookup fails and the gate falls back to matching
+  # individual @logins and doc frontmatter authors only — it fails closed, so
+  # the effect is withheld approvals, not wrong ones.
+  members: read
 
 repositories:
 - enterprise-packages
