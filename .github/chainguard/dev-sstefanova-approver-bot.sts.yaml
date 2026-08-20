@@ -1,0 +1,29 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the approver sstefanova.dev dev environment.
+# Service account: approver@sstefanova-dev.iam.gserviceaccount.com
+# Deployed by env/dev/sstefanova/999-approver in chainguard-dev/mono.
+#
+# Approve-only: the bot submits an approving review, posts the doc-driven
+# status comment, and labels PRs, but never merges, so it needs no
+# contents: write.
+
+issuer: https://accounts.google.com
+subject: "104212429530057230538"
+
+permissions:
+  contents: read
+  checks: read
+  statuses: read
+  pull_requests: write
+  # The ownership gate resolves a CODEOWNERS "@chainguard-dev/<team>" entry
+  # by asking whether the PR author is an active member of that team
+  # (GetTeamMembershipBySlug), an organization read, not a repository one.
+  # Without it the lookup fails and the gate falls back to matching
+  # individual @logins and doc frontmatter authors only — it fails closed,
+  # so the effect is withheld approvals, not wrong ones.
+  members: read
+
+repositories:
+- mono

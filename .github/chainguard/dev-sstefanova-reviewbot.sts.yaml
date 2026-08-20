@@ -1,0 +1,15 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the reviewbot sstefanova.dev dev environment.
+# Service account: reviewbot@sstefanova-dev.iam.gserviceaccount.com
+# Deployed by env/dev/sstefanova/999-reviewbot in chainguard-dev/mono.
+
+issuer: https://accounts.google.com
+subject: "110751357758321772803"
+
+permissions:
+  contents: read
+  pull_requests: write
+  checks: write
+  actions: read
