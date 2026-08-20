@@ -1,0 +1,30 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the LensDelivery dashboard (mono
+# dev-platform-tools/lens, /delivery). Mints a short-lived GitHub token to
+# read the Chainguard Image Fulfillment board (org project #45), read and
+# comment on the issues behind it, and edit its board fields from the Lens
+# side panel — no standing token.
+#
+# issues:write is scoped to the two repos below (image requests plus the
+# escalations the board carries). organization_projects:write is org-wide —
+# GitHub does not allow scoping project permissions to a single board; the
+# hub endpoint only mutates an allowlisted set of fields on project #45.
+#
+# subject_pattern federates the preview + prod service accounts by their
+# Google numeric uniqueId (same accounts as lens-customer-issues).
+
+issuer: https://accounts.google.com
+subject_pattern: "^(106033804611612894562|107735894821561716452|116438120363188640248)$"
+
+permissions:
+  # Read + comment on issues in the repos below (write implies read).
+  issues: write
+  # Read the board and edit its fields (Status, Target Completion Date,
+  # Delivery Status (PgM), Grade, Grade [FIPS], Builder, PR Reviewer).
+  organization_projects: write
+
+repositories:
+  - image-requests
+  - customer-issues
