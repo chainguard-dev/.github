@@ -2,12 +2,16 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Octo STS policy for the Lens dashboard service accounts. Mints a short-lived
-# GitHub token to read issues and an org-level project board and to post issue
-# comments — no standing token.
+# GitHub token to read issues and an org-level project board, post issue
+# comments, and auto-triage (set Status/Priority/Team project fields) — no
+# standing token.
 #
 # issues:write is scoped to the single repo below (write is the more dangerous
-# grant). organization_projects:read is org-wide and read-only — GitHub does not
-# allow scoping it to a single project board.
+# grant). organization_projects:write is org-wide — GitHub does not allow
+# scoping it to a single project board — and is needed for the dashboard's
+# auto-triage feature to set Status/Priority/Team fields on the org-level
+# project board via updateProjectV2ItemFieldValue; read-only access cannot
+# perform that mutation.
 #
 # subject_pattern federates the preview + prod service accounts by their Google
 # numeric uniqueId.
@@ -18,8 +22,9 @@ subject_pattern: "^(106033804611612894562|107735894821561716452|1164381203631886
 permissions:
   # Read + comment on issues in the repo below (write implies read).
   issues: write
-  # Read-only access to org-level project boards (the dashboard's source list).
-  organization_projects: read
+  # Write access to org-level project boards (the dashboard's source list) —
+  # needed so auto-triage can set Status/Priority/Team fields, not just read them.
+  organization_projects: write
 
 repositories:
   - customer-issues
