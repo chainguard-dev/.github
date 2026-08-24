@@ -3,12 +3,11 @@
 
 # Octo STS policy for the doc-approval production environment.
 # Service account: doc-approval@prod-enforce-fabc.iam.gserviceaccount.com
-# Subject is the service account uniqueId; placeholder until provisioned.
-#
-# TODO(post-apply): replace the PLACEHOLDER below with the uniqueId.
+# Subject is that service account's uniqueId, seeded from the prod
+# environment apply.
 
 issuer: https://accounts.google.com
-subject: "PLACEHOLDER_REPLACE_WITH_PROD_SA_UNIQUE_ID"
+subject: "109086265734755595179"
 
 permissions:
   contents: read
