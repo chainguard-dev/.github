@@ -6,5 +6,8 @@ subject_pattern: "117959345416790619431"
 # to be able to read pr status
 permissions:
   pull_requests: read
+  # the PR-size GraphQL query also reads the repo's root .gitattributes blob
+  # (linguist-generated exclusions), which requires contents read
+  contents: read
 
 repositories: []  # Act over all of the repos in the org.
