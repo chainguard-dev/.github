@@ -24,4 +24,5 @@ repositories:
 - enterprise-packages
 - extra-packages
 - stereo
+- stereo-staging
 - mono
