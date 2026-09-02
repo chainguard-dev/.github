@@ -11,5 +11,8 @@ permissions:
   contents: read
   pull_requests: write
   statuses: read
-  checks: read
+  checks: write # Publish SHA-bound confidence/grade checks for the staging merge gate
   administration: read # Read the base branch's required status checks for the CI gate
+
+repositories:
+  - stereo-staging
