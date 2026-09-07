@@ -1,0 +1,15 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# PR explanation bot in mono's env/dev/tcnghia.net/iac/999-pr-viz.
+# Service account: pr-viz@nghia-chainguard-ng.iam.gserviceaccount.com
+issuer: https://accounts.google.com
+subject: "112355324587027939118"
+
+permissions:
+  contents: read
+  pull_requests: write
+
+repositories:
+  - mono
+  - stereo
