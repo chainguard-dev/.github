@@ -1,14 +1,16 @@
 # Copyright 2026 Chainguard, Inc.
 # SPDX-License-Identifier: Apache-2.0
 
-# Read-only access for the alert-slack-bot review-queue policy: team
-# membership lookup plus PR search, limited to mono.
+# Read-only access for the alert-slack-bot policies: team membership lookup
+# and PR search for the review queue, plus contents read so the prod-alerts
+# digest can look up what an alert or DLQ is about in source. Limited to mono.
 issuer: https://accounts.google.com
 
 # alert-slack-bot@staging-enforce-cd1e | alert-slack-bot@prod-enforce-fabc
 subject_pattern: (114816490335454510913|115816735061299852605)
 
 permissions:
+  contents: read
   members: read
   pull_requests: read
   metadata: read
