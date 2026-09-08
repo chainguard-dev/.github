@@ -7,7 +7,8 @@ claim_pattern:
   job_workflow_ref: chainguard-dev/infra/.github/workflows/.terraform.yaml@.*
 
 permissions:
-  administration: write # required to read repository environments (github_repository_environment); GitHub's API 403s a read-only App token even on GET
+  actions: read # required to read repository environments (github_repository_environment); see "Get an environment" fine-grained token requirements in GitHub's REST docs
+  administration: read # required to read the repository
   contents: write # required per terraform docs (https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository)
   members: read # to read GitHub members information
   metadata: read # to read metadata about the org
