@@ -7,6 +7,7 @@ claim_pattern:
   job_workflow_ref: chainguard-dev/infra/.github/workflows/.terraform.yaml@.*
 
 permissions:
+  actions: read # required to read repository environments (github_repository_environment); see "Get an environment" fine-grained token requirements in GitHub's REST docs
   administration: write # required to manage the repository
   contents: write # required per terraform docs (https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository)
   members: write # to add/remove GitHub members
