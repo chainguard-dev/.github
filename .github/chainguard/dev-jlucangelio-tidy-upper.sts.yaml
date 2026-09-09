@@ -1,0 +1,32 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS trust policy for tidy-upper. This is an org-level policy: it lives
+# in the target org's `.github` repository (e.g. chainguard-dev/.github) as
+# `.github/chainguard/<identity>.sts.yaml`, where <identity> is the value
+# passed as OCTO_IDENTITY (e.g. `dev-<you>-tidy-upper` for a laptop run backed
+# by a personal dev-project service account). tidy-upper mints one org-scoped
+# token per org, and octo-sts limits it to the repositories listed below.
+# See bots/tidy-upper/README.md, "Run with octo-sts".
+#
+# Service account: <sa>@<your-dev-project>.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+# The service account's numeric unique ID:
+#   gcloud iam service-accounts describe <sa>@<project>.iam.gserviceaccount.com --format='value(uniqueId)'
+subject: "112405175308737443927"
+
+permissions:
+  # File issues and search for already-filed ones.
+  issues: write
+
+  # Read repository visibility for the private-only guard.
+  metadata: read
+
+# Every repository tidy-upper may file into. Keep this explicit: an empty list
+# means every repository the octo-sts App reaches in the org, and tidy-upper
+# writes unfixed vulnerability details into the issues it files.
+repositories:
+  - mono
+  - stereo
+  - prodsec
