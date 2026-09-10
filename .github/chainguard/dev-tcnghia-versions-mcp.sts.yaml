@@ -1,0 +1,13 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://accounts.google.com
+
+# versions-mcp@nghia-chainguard-ng.iam.gserviceaccount.com
+subject: "100520663424283992708"
+
+permissions:
+  contents: read
+
+repositories:
+  - stereo
