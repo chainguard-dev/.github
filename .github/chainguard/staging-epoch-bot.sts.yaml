@@ -9,6 +9,5 @@ permissions:
   pull_requests: read
 
 repositories:
-- enterprise-packages
 - stereo
 - stereo-staging
