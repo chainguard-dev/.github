@@ -1,0 +1,19 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for Materializer dev environment
+# Service account: bot-jcamisso-grass@jcamisso-chainguard-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "117995463605744678427"
+
+permissions:
+  # Read code
+  contents: read
+
+  # Read issues to fetch issue body
+  issues: read
+
+repositories:
+  - grass
+  - image-requests
