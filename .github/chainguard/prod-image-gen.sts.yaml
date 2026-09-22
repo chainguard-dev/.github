@@ -27,5 +27,9 @@ permissions:
   # Trigger and manage GitHub Actions workflows
   workflows: write
 
+  # Request the reviewing team (review_escalation_team, FUL-832) as a PR reviewer;
+  # team reviewer requests need read access to org members.
+  members: read
+
 repositories:
   - stereo
