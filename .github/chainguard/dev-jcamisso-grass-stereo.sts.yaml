@@ -1,0 +1,32 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the grass bot's packaging handoff (dev environment).
+# Service account: bot-jcamisso-grass@jcamisso-chainguard-dev.iam.gserviceaccount.com
+#
+# Separate from dev-jcamisso-grass.sts.yaml, which reads the procedure and the
+# duplicate corpus, because permissions apply to every repository a policy
+# lists: folding stereo in would grant issue writes on grass and
+# image-requests too. This one lists stereo and nothing else.
+#
+# Equivalent for the GitHub Actions path is image-requests-claude.sts.yaml in
+# chainguard-dev/stereo, which authorises the image-requests claude.yaml
+# workflow to open the same tracking issues.
+
+issuer: https://accounts.google.com
+subject: "117995463605744678427"
+
+permissions:
+  # Required for the dedup search (GET /search/issues with
+  # repo:chainguard-dev/stereo) to see that private repo -- without it search
+  # returns 403. The bot treats a refused search as fatal to the handoff
+  # rather than as "no existing issue", so the absence of this permission
+  # means no tracking issue is filed at all rather than a duplicate one.
+  metadata: read
+
+  # Open the tracking issue, and create the grass-grade:<letter> label when it
+  # does not already exist.
+  issues: write
+
+repositories:
+  - stereo
