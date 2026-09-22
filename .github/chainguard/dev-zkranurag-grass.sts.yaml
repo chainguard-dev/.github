@@ -1,0 +1,14 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# bot-zkranurag-grass@zkranurag-dev.iam.gserviceaccount.com
+issuer: https://accounts.google.com
+subject: "114589844014031630048"
+
+permissions:
+  contents: read
+  issues: read
+
+repositories:
+  - grass
+  - image-requests
