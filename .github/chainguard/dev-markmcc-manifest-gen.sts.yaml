@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Octo STS policy for manifest-gen dev environment
-# Service account: markmcc-mfg@markmc-dev.iam.gserviceaccount.com
+# Service account: markmcc-mfg@markmcc-dev.iam.gserviceaccount.com
 
 issuer: https://accounts.google.com
 subject: "113232556405431296212"
@@ -20,8 +20,8 @@ permissions:
   # Create and update pull requests
   pull_requests: write
 
-  # Read issues
-  issues: read
+  # Read issues to fetch issue body; post failure comments and apply the halt label on issues
+  issues: write
 
   # Trigger and manage GitHub Actions workflows
   workflows: write
