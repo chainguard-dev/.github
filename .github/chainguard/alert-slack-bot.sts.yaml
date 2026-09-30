@@ -3,7 +3,9 @@
 
 # Read-only access for the alert-slack-bot policies: team membership lookup
 # and PR search for the review queue, plus contents read so the prod-alerts
-# digest can look up what an alert or DLQ is about in source. Limited to mono.
+# and DLQ digests can look up what an alert or DLQ is about in source: mono
+# for code, stereo for the package configs and version_data files a failing
+# key names.
 issuer: https://accounts.google.com
 
 # alert-slack-bot@staging-enforce-cd1e | alert-slack-bot@prod-enforce-fabc
@@ -17,3 +19,4 @@ permissions:
 
 repositories:
   - mono
+  - stereo
