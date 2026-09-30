@@ -20,8 +20,10 @@ permissions:
   # Create and update pull requests
   pull_requests: write
 
-  # Read issues (the bot's trigger)
-  issues: read
+  # Read issue bodies (the bot's trigger), comment on and label issues to
+  # surface terminal failures and apply the skip:<identity> halt label, and
+  # file packaging requests for manifest-gen.
+  issues: write
 
   # Trigger and manage GitHub Actions workflows
   workflows: write
