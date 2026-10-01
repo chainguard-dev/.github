@@ -1,0 +1,20 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Issue write for the alert-slack-bot policies that file Materializer issues:
+# a digest that finds a file on main needing an edit opens a
+# materializer/managed issue for it, after checking for an open one. Kept
+# apart from alert-slack-bot.sts.yaml so digests that never file issues keep a
+# read-only token; the bot mints this one only for policies that enable it.
+issuer: https://accounts.google.com
+
+# alert-slack-bot@staging-enforce-cd1e | alert-slack-bot@prod-enforce-fabc
+subject_pattern: (114816490335454510913|115816735061299852605)
+
+permissions:
+  issues: write
+  metadata: read
+
+repositories:
+  - mono
+  - stereo
