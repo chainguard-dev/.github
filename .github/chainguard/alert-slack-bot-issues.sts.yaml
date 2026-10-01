@@ -8,8 +8,10 @@
 # read-only token; the bot mints this one only for policies that enable it.
 issuer: https://accounts.google.com
 
-# alert-slack-bot@staging-enforce-cd1e | alert-slack-bot@prod-enforce-fabc
-subject_pattern: (114816490335454510913|115816735061299852605)
+# alert-slack-bot@prod-enforce-fabc only. Staging would file real issues in the
+# same production repos, so it stays on the read-only identity until filing
+# has evals.
+subject: "115816735061299852605"
 
 permissions:
   issues: write
