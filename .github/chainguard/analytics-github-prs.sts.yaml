@@ -13,6 +13,8 @@ claim_pattern:
 
 permissions:
   pull_requests: read # repository.pullRequests, reviews, timelineItems
+  contents: read # PullRequest.commits -> Commit objects (author, committer); fails without it
+  issues: read # search(type:ISSUE, query:"is:pr ..."){ issueCount } for pr_volume_monthly
   metadata: read # read repo metadata
 
 repositories:
