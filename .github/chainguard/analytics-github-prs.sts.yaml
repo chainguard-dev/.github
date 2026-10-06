@@ -1,0 +1,19 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Read-only token for the data team's PR velocity sync
+# (chainguard-dev/analytics-dlt-salesforce run_github_prs_workflow.yml). Pages
+# pull requests, reviews and timeline events in mono and stereo via GraphQL into
+# BigQuery engineering_metrics. Models access-audit-github-read.sts.yaml.
+issuer: https://token.actions.githubusercontent.com
+subject: repo:chainguard-dev/analytics-dlt-salesforce:ref:refs/heads/main
+claim_pattern:
+  job_workflow_ref: chainguard-dev/analytics-dlt-salesforce/.github/workflows/run_github_prs_workflow.yml@refs/heads/main
+
+permissions:
+  pull_requests: read # repository.pullRequests, reviews, timelineItems
+  metadata: read # read repo metadata
+
+repositories:
+  - mono
+  - stereo
