@@ -15,6 +15,7 @@ permissions:
   pull_requests: read # repository.pullRequests, reviews, timelineItems
   contents: read # PullRequest.commits -> Commit objects (author, committer); fails without it
   issues: read # search(type:ISSUE, query:"is:pr ..."){ issueCount } for pr_volume_monthly
+  checks: read # check runs on each PR's approved commit, for the CI green time (AIC-73)
   metadata: read # read repo metadata
 
 repositories:
