@@ -1,0 +1,15 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Handoff access for bot-staging-grass@staging-enforce-cd1e.iam.gserviceaccount.com.
+# Keep issue writes separate from the grading identity, which reads grass and
+# image-requests.
+issuer: https://accounts.google.com
+subject: "108701772772428186513"
+
+permissions:
+  metadata: read
+  issues: write
+
+repositories:
+  - stereo
