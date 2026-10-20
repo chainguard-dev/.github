@@ -16,6 +16,8 @@ subject: "115816735061299852605"
 permissions:
   issues: write
   metadata: read
+  # Lets the digest's issue summary show each filed issue's fix PR.
+  pull_requests: read
 
 repositories:
   - mono
