@@ -1,0 +1,20 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the skill-refresh dev environment: reads mono and opens
+# draft pull requests on dev-mrisharma-skill-refresh/agents/skills/* for
+# testing. Production uses skill-refresh.sts.yaml.
+# Service account: mrisharma-skill-refresh@mrisharma-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "118221063163955114482"
+
+permissions:
+  # Push the dev-mrisharma-skill-refresh/* branch
+  contents: write
+
+  # Open and update the draft pull request
+  pull_requests: write
+
+repositories:
+  - mono
