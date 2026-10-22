@@ -1,0 +1,16 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the skill-refresh dev environment: reads stereo's pull
+# requests, reviews, commits, and contents as evidence. It never writes.
+# Service account: mrisharma-skill-refresh@mrisharma-dev.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "118221063163955114482"
+
+permissions:
+  contents: read
+  pull_requests: read
+
+repositories:
+  - stereo
