@@ -20,8 +20,10 @@ permissions:
   # Create and update pull requests
   pull_requests: write
 
-  # Read issues (the bot's trigger)
-  issues: read
+  # The bot's trigger, but it also writes back: progress and findings comments
+  # on the image request, the skip/halt labels, and the packaging request it
+  # files for manifest-gen when the main APK is unpublished.
+  issues: write
 
   # Trigger and manage GitHub Actions workflows
   workflows: write
