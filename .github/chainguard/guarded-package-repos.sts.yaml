@@ -21,6 +21,7 @@ repositories:
   - ecosystems-hive
   - ecosystems-kafka
   - ecosystems-spark
+  - gcrypt-openssl
   - iamguarded-charts
   - iamguarded-containers
   - iamguarded-tools
