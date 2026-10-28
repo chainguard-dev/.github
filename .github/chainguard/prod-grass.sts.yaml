@@ -1,0 +1,15 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+issuer: https://accounts.google.com
+subject_pattern: "^[0-9]+$"
+claim_pattern:
+  email: '^bot-prod-grass@prod-enforce-fabc\.iam\.gserviceaccount\.com$'
+
+permissions:
+  contents: read
+  issues: read
+
+repositories:
+  - grass
+  - image-requests
