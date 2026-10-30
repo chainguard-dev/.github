@@ -16,4 +16,6 @@ repositories:
 # image-release-stats: read chonk issues to check whether an image is a known
 # broken build before reporting on its health.
 - image-release-stats
+# infra: read code and file materializer issues.
+- infra
 - mono
