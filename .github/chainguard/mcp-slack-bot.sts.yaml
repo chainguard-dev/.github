@@ -11,6 +11,8 @@ permissions:
   contents: read
   issues: write          # write permission to create materializer issues from the slack bot
   pull_requests: read
+  checks: read           # PR watch: check runs on a watched PR's head
+  statuses: read         # PR watch: commit statuses on a watched PR's head
 
 repositories:
 # stereo: read pull requests (skillup PRs, build status).
