@@ -13,6 +13,7 @@ permissions:
   pull_requests: read
   checks: read           # PR watch: check runs on a watched PR's head
   statuses: read         # PR watch: commit statuses on a watched PR's head
+  actions: read          # PR watch: Provision workflow runs and jobs after merge
 
 repositories:
 # stereo: read pull requests (skillup PRs, build status).
