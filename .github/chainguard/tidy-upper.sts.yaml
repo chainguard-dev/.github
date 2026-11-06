@@ -117,3 +117,7 @@ repositories:
   - wolfi-staging
   - wolfi-vm
   - www
+  # Not scanned by DepthFirst: the hosted reconciler's write-path smoke test
+  # (PSEC-3701) files one label-gated test issue here. Allowed as an explicit
+  # exception in prodsec/secure-sdlc/octosts/policy_check.py.
+  - tidy-upper-smoketest
