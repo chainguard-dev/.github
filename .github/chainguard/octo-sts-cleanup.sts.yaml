@@ -1,0 +1,23 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Opts this org in to octo-sts.dev's monthly policy cleanup
+# (octo-sts/app#1075): it opens a pull request removing trust policies with no
+# exchanges and no changes in 90 days, and an issue for policies that only
+# fail. It never merges anything. Prod runs it as a dry run for now, so it only
+# logs which policies it would remove.
+issuer: https://accounts.google.com
+# octo-sts-policy-cleanup@octo-sts.iam.gserviceaccount.com, provisioned by
+# env/octo-sts/policy_cleanup.tf in octo-sts/app.
+subject: "101798790782455855833"
+claim_pattern:
+  email: octo-sts-policy-cleanup@octo-sts\.iam\.gserviceaccount\.com
+
+permissions:
+  # Push a branch removing unused policies.
+  contents: write
+  # Open the pull request from that branch.
+  pull_requests: write
+  # Report policies that only fail.
+  issues: write
+repositories: [] # Every repository in the org.
