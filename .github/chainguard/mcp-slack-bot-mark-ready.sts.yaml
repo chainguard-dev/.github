@@ -1,0 +1,22 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Guard-bot's PR watch marks a Materializer draft pull request ready for review
+# once its required checks pass. That call needs pull_requests: write, which
+# also allows reviews, so it has its own policy: only the watch's mark-ready
+# call uses this token, and Guard-bot's agent tools never see it. See
+# docs/developer-platform/land-from-a-channel.md in mono.
+issuer: https://accounts.google.com
+# The same workers as mcp-slack-bot.sts.yaml:
+# mcp-slack-bot-worker@staging-enforce-cd1e.iam.gserviceaccount.com and
+# mcp-slack-bot-worker@internal-tools-1ho6.iam.gserviceaccount.com, until the
+# staging worker is removed.
+subject_pattern: "(116448882333472298588|116341833399419050686)"
+
+permissions:
+  pull_requests: write   # mark a Materializer draft pull request ready
+
+repositories:
+# Materializer opens its pull requests in mono and infra.
+- mono
+- infra
