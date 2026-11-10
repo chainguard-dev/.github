@@ -1,0 +1,124 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS trust policy for the hosted fathom bot (bots/fathom in
+# chainguard-dev/mono; its identity, Vertex AI access and Linear secrets come
+# from env/enforce.dev/iac/400-fathom; the reconciler follows in the same
+# stage and mints its tokens as identity fathom). fathom verifies DepthFirst
+# findings on the PSEC board by cloning the finding's repository (depth-1,
+# read-only) and running a two-model panel over the checkout. It never writes
+# to GitHub: its verdicts go to Linear. Linear: PSEC-3363 (epic PSEC-3348).
+#
+# Service account: bot-fathom@prod-enforce-fabc.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+# gcloud iam service-accounts describe bot-fathom@prod-enforce-fabc.iam.gserviceaccount.com --format='value(uniqueId)'
+subject: "109420456395610747382"
+
+permissions:
+  # Clone the finding's repository. Read only: fathom inspects the checkout
+  # and never pushes, so this is the whole grant.
+  contents: read
+
+  # Resolve the repository and read its visibility.
+  metadata: read
+
+# Every repository fathom may clone: the DepthFirst-scanned private
+# chainguard-dev repositories, from prodsec/secure-sdlc/terraform/workflows.tf
+# (groups tf-materializer-enabled and tf-non-materializer-private-internal),
+# the same scanned set tidy-upper.sts.yaml files into. Keep this list explicit
+# and in step with workflows.tf: an empty list means every repository the
+# octo-sts App reaches in the org. A repository missing here fails every fathom
+# clone of it, so its findings are skipped unverified on every sweep.
+# prodsec/secure-sdlc/octosts/policy_check.py diffs this list against
+# workflows.tf. tidy-upper-smoketest is deliberately absent: it is tidy-upper's
+# write-path smoke-test target (PSEC-3701) and holds nothing to verify.
+repositories:
+  - CVE-Dashboard
+  - Image-Quality
+  - analytics-dlt-salesforce
+  - apk-db
+  - bkitrouter
+  - chainguard-devops
+  - community-helm-charts
+  - console-ui
+  - courses
+  - customer-issues
+  - customer-success
+  - customer-support-tasks
+  - e2e-test
+  - eco-system-maven-index
+  - ecosystems-apache-directory-server
+  - ecosystems-architecture
+  - ecosystems-avro
+  - ecosystems-backfill
+  - ecosystems-bcfips
+  - ecosystems-cassandra
+  - ecosystems-commons-configuration
+  - ecosystems-cve-backport-testing
+  - ecosystems-cver
+  - ecosystems-db
+  - ecosystems-demos
+  - ecosystems-ea
+  - ecosystems-full-search
+  - ecosystems-grpc-java
+  - ecosystems-hadoop
+  - ecosystems-hive
+  - ecosystems-infra
+  - ecosystems-insights
+  - ecosystems-java-rebuilder
+  - ecosystems-jck-infra
+  - ecosystems-kafka
+  - ecosystems-maven-index-search
+  - ecosystems-neo4j
+  - ecosystems-packages
+  - ecosystems-pipekit
+  - ecosystems-provenance
+  - ecosystems-python-cuda-infra
+  - ecosystems-rebuilder.js
+  - ecosystems-spark
+  - ecosystems-spdx-maven-plugin
+  - ecosystems-wheel-rebuilder
+  - ecosystems-workflows
+  - ecosystems-zookeeper
+  - flakiness-detector
+  - gauge
+  - git-export
+  - grass
+  - guarded-actions
+  - homebrew-private-tap
+  - honk-test
+  - iamguarded
+  - iamguarded-charts
+  - iamguarded-containers
+  - iamguarded-tools
+  - identity-reporter
+  - image-release-stats
+  - image-requests
+  - infosec
+  - infra
+  - internal
+  - internal-analytics
+  - internal-dev
+  - linux
+  - mavenbump
+  - mono
+  - openssl
+  - partnercenter-cli-extension
+  - proctor
+  - prodsec
+  - project-backup
+  - pubsec-accounts
+  - rulesets
+  - sales-engineering
+  - scanners-private
+  - cg-secrets
+  - stereo
+  - support
+  - team-sustaining
+  - test-staging-advisories
+  - test-staging-packages
+  - wiki
+  - wolfi-staging
+  - wolfi-vm
+  - www
