@@ -2,10 +2,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
 issuer: https://accounts.google.com
-# mcp-slack-bot-worker@staging-enforce-cd1e.iam.gserviceaccount.com and
-# mcp-slack-bot-worker@internal-tools-1ho6.iam.gserviceaccount.com, until the
-# staging worker is removed.
-subject_pattern: "(116448882333472298588|116341833399419050686)"
+# mcp-slack-bot-worker@internal-tools-1ho6.iam.gserviceaccount.com, Guard-bot's
+# only deployment.
+subject_pattern: "116341833399419050686"
 
 permissions:
   contents: read
