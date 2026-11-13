@@ -1,0 +1,25 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for ftbfs-validator, the levelhead deployment that checks
+# ftbfs rebuild PRs on stereo (chainguard-dev/mono env/*/iac/400-ftbfs).
+# Service accounts: ftbfs-validator@prod-enforce-fabc and
+# ftbfs-validator@staging-enforce-cd1e. They are created by the same
+# Terraform that references this identity, so their unique IDs are not known
+# yet; match their verified emails until the IDs can be pinned in subject.
+issuer: https://accounts.google.com
+subject_pattern: "[0-9]+"
+claim_pattern:
+  email_verified: "true"
+  email: ftbfs-validator@(prod-enforce-fabc|staging-enforce-cd1e)\.iam\.gserviceaccount\.com
+
+permissions:
+  # Publish the validation check run.
+  checks: write
+  # Clone the PR head.
+  contents: read
+  # Read the PR and its diff.
+  pull_requests: read
+
+repositories:
+  - stereo
