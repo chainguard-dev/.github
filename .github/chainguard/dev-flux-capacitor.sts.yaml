@@ -1,0 +1,30 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Octo STS policy for the flux-capacitor shared dev environment
+# Service account: flux-capacitor@dev-flux-capacitor.iam.gserviceaccount.com
+
+issuer: https://accounts.google.com
+subject: "116561376129820467256"
+
+permissions:
+  # Read github actions logs
+  actions: read
+
+  # Read check status
+  checks: read
+
+  # Create and push branches
+  contents: write
+
+  # Create and update pull requests
+  pull_requests: write
+
+  # Read issue bodies and post reconciliation comments.
+  issues: write
+
+  # Trigger and manage GitHub Actions workflows
+  workflows: write
+
+repositories:
+  - stereo
