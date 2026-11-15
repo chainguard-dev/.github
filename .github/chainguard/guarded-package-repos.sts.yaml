@@ -26,4 +26,5 @@ repositories:
   - iamguarded-containers
   - iamguarded-tools
   - mono
+  - stereo
   - zulu-jdk
