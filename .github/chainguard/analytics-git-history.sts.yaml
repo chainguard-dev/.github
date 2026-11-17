@@ -1,0 +1,20 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# Read-only token for the commit history loader
+# (chainguard-dev/analytics-dlt-salesforce run_git_history_workflow.yml). Lists
+# commit ranges with the compare API and fetches commits and trees from the main
+# branches of mono and stereo into BigQuery. Models analytics-github-prs.sts.yaml,
+# which trusts only the PR sync's workflow file.
+issuer: https://token.actions.githubusercontent.com
+subject: repo:chainguard-dev/analytics-dlt-salesforce:ref:refs/heads/main
+claim_pattern:
+  job_workflow_ref: chainguard-dev/analytics-dlt-salesforce/.github/workflows/run_git_history_workflow.yml@refs/heads/main
+
+permissions:
+  contents: read # compare API, per-commit API, git ls-remote and git fetch
+  metadata: read # read repo metadata
+
+repositories:
+  - mono
+  - stereo
