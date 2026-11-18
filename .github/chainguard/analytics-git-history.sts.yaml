@@ -2,16 +2,14 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Read-only token for the commit history loader
-# (chainguard-dev/analytics-dlt-salesforce run_git_history_workflow.yml). Lists
+# (chainguard-dev/data-analytics-ingestion-pipeline run_git_history_workflow.yml). Lists
 # commit ranges with the compare API and fetches commits and trees from the main
 # branches of mono and stereo into BigQuery. Models analytics-github-prs.sts.yaml,
 # which trusts only the PR sync's workflow file.
 issuer: https://token.actions.githubusercontent.com
-# Both names while analytics-dlt-salesforce is renamed to
-# data-analytics-ingestion-pipeline; drop the old one after the rename applies.
-subject_pattern: repo:chainguard-dev/(analytics-dlt-salesforce|data-analytics-ingestion-pipeline):ref:refs/heads/main
+subject: repo:chainguard-dev/data-analytics-ingestion-pipeline:ref:refs/heads/main
 claim_pattern:
-  job_workflow_ref: chainguard-dev/(analytics-dlt-salesforce|data-analytics-ingestion-pipeline)/\.github/workflows/run_git_history_workflow\.yml@refs/heads/main
+  job_workflow_ref: chainguard-dev/data-analytics-ingestion-pipeline/.github/workflows/run_git_history_workflow.yml@refs/heads/main
 
 permissions:
   contents: read # compare API, per-commit API, git ls-remote and git fetch

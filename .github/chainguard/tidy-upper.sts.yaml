@@ -31,7 +31,6 @@ permissions:
 repositories:
   - CVE-Dashboard
   - Image-Quality
-  - analytics-dlt-salesforce
   - apk-db
   - bkitrouter
   - chainguard-devops
@@ -41,6 +40,7 @@ repositories:
   - customer-issues
   - customer-success
   - customer-support-tasks
+  - data-analytics-ingestion-pipeline
   - e2e-test
   - eco-system-maven-index
   - ecosystems-apache-directory-server
