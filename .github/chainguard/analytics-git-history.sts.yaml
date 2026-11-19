@@ -7,9 +7,11 @@
 # branches of mono and stereo into BigQuery. Models analytics-github-prs.sts.yaml,
 # which trusts only the PR sync's workflow file.
 issuer: https://token.actions.githubusercontent.com
-subject: repo:chainguard-dev/data-analytics-ingestion-pipeline:ref:refs/heads/main
+# GitHub gives this repository immutable OIDC subjects (owner and repository
+# ids), set when it was renamed from analytics-dlt-salesforce.
+subject: repo:chainguard-dev@87436699/data-analytics-ingestion-pipeline@908670752:ref:refs/heads/main
 claim_pattern:
-  job_workflow_ref: chainguard-dev/data-analytics-ingestion-pipeline/.github/workflows/run_git_history_workflow.yml@refs/heads/main
+  job_workflow_ref: chainguard-dev/data-analytics-ingestion-pipeline/\.github/workflows/run_git_history_workflow\.yml@refs/heads/main
 
 permissions:
   contents: read # compare API, per-commit API, git ls-remote and git fetch
