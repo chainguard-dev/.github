@@ -1,6 +1,7 @@
 issuer: https://accounts.google.com
 # autofix@prod-enforce-fabc.iam.gserviceaccount.com
-subject: "114301252256317020592"
+# autofix@internal-tools-1ho6.iam.gserviceaccount.com
+subject_pattern: "^(114301252256317020592|107457135590592364544)$"
 
 permissions:
   actions: read
