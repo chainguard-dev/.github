@@ -4,16 +4,16 @@
 # Read-only GitHub access for the Cyber Resiliency team's investigation MCP server
 # (chainguard-sandbox/cyber-resiliency, runicward/mcp-servers), which answers security
 # investigators' questions about pull request reviews and approvals, comments, linked issues,
-# code, branch protection, rulesets, Actions settings and outside collaborators.
+# branch protection, rulesets, Actions settings and outside collaborators.
 issuer: https://accounts.google.com
 # subject = unique ID of mcp-investigation@mcp-investigation-h7j6.iam.gserviceaccount.com
-# (the investigation server's Cloud Run runtime account; terraform output
-# service_account_unique_id in the investigation stack)
+# (the investigation server's Cloud Run runtime account; confirmed with gcloud on 2026-11-26).
+# Only that Cloud Run service can act as this account: it has no keys, and impersonating it
+# raises an alert.
 subject: "103277094012897342231"
 
 permissions:
   administration: read # branch protection and Actions settings of a repo
-  contents: read # code search
   issues: read # a pull request's or issue's timeline (what links to it) and its comments
   members: read # outside collaborators of the org
   metadata: read # repo rulesets
