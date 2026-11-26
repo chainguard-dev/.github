@@ -8,8 +8,7 @@
 issuer: https://accounts.google.com
 # subject = unique ID of mcp-investigation@mcp-investigation-h7j6.iam.gserviceaccount.com
 # (the investigation server's Cloud Run runtime account; confirmed with gcloud on 2026-11-26).
-# Only that Cloud Run service can act as this account: it has no keys, and impersonating it
-# raises an alert.
+# The server's Cloud Run runtime and the deploy pipeline's account can act as it; no keys exist.
 subject: "103277094012897342231"
 
 permissions:
