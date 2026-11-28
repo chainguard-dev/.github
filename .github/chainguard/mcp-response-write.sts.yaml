@@ -1,0 +1,16 @@
+# Copyright 2026 Chainguard, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# GitHub access for the Cyber Resiliency team's response MCP server
+# (chainguard-sandbox/cyber-resiliency, runicward/mcp-servers), which turns GitHub Actions off
+# and on for a repository under incident. Every disable needs one person's approval, and the
+# server refuses protected repos by numeric ID.
+issuer: https://accounts.google.com
+# subject = unique ID of mcp-response@mcp-response-k1fa.iam.gserviceaccount.com
+# (the response server's Cloud Run runtime account; also recorded as its allowed server ID in
+# chainguard-sandbox/cyber-resiliency approval-service/deploy/terraform/gcp/envs/prod/prod.tfvars).
+subject: "114255384685708341074"
+
+permissions:
+  administration: write # turn Actions on or off for a repo
+  metadata: read # repo lookup by name and ID
